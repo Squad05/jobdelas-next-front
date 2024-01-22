@@ -1,17 +1,17 @@
 import Head from "next/head";
 import styles from "../../styles/Auth.module.css";
+import CadastroForm from "@/components/FormCadastro";
 import NavbarAuth from "@/components/NavbarAuth";
-import FormLogin from "@/components/FormLogin";
 
-export default function Login() {
+export default function Cadastro() {
   return (
     <>
       <Head>
-        <title>Jobdelas - Login </title>
+        <title>Jobdelas - Cadastro </title>
       </Head>
       <main className={styles.estilo_body}>
         <NavbarAuth />
-        <FormLogin />
+        <CadastroForm />
       </main>
     </>
   );
