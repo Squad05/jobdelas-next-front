@@ -1,6 +1,6 @@
 .containerNav {
-     min-width: 100%;
-     background-color: transparent;
+    min-width: 100%;
+    background-color: transparent;
     display: flex;
     align-items: center;
     border: none;
@@ -11,8 +11,8 @@
     margin-top: 10px;
     border-radius: 10px 0px 0px 0px;
     width: 95%;
-    padding: 13px;
-    background-color: #B378FF;
+    padding: 10px;
+    background-color:#0D0117;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -26,6 +26,7 @@
     background-color: #ffffff;
     width: 160px;
     height: 50px;
+    border-radius: 3px;
     gap: 3px;
     font-size: 24px;
     color: #B378FF;
@@ -38,7 +39,7 @@
 
 
 .estilo_link:hover {
-    background: linear-gradient(90deg,  #ffffff 95%, #8b42c6 5%);
-    color: #8b42c6 ;
+    background: linear-gradient(90deg,  #ffffff 95%, #B378FF 5%);
+    color: #B378FF ;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
