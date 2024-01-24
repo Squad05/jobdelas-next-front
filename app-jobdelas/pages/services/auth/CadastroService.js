@@ -1,10 +1,9 @@
 import axios from "axios";
 
-const cadastrar = async (nome, sobrenome, email, senha) => {
+const cadastrar = async (nome, email, senha) => {
   try {
     const dados = {
       nome,
-      sobrenome,
       email,
       senha,
       cargo: "USER",
@@ -12,7 +11,7 @@ const cadastrar = async (nome, sobrenome, email, senha) => {
 
     console.log(dados);
     const response = await axios.post(
-      "https://jbcompanyapi.onrender.com/auth/cadastrar",
+      "http://localhost:8080/auth/cadastrar",
       dados
     );
   } catch (erro) {

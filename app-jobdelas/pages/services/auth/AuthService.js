@@ -8,7 +8,7 @@ const login = async (email, senha) => {
     };
 
     const response = await axios.post(
-      "https://jbcompanyapi.onrender.com/auth/login",
+      "http://localhost:8080/auth/logar",
       dados
     );
 

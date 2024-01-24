@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { login } from "../pages/services/auth/AuthService";
 
 import {
     FormControl,
@@ -25,7 +26,7 @@ export default function FormLogin() {
         try {
             const token = await login(email, senha);
             localStorage.setItem("token", token);
-            router.push("/social");
+            router.push("/");
         } catch (erro) {
             setErrorMensagem(erro.message);
         }

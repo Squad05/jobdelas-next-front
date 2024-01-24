@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router"; 
+import { cadastrar } from "@/pages/services/auth/CadastroService";
 
 import {
     FormControl,
@@ -25,11 +26,15 @@ export default function CadastroForm() {
         e.preventDefault();
 
         try {
-            
-            const cadastrarUsuario = await cadastrar(primeiroNome, email, senha);
+            const nomeCompleto = `${primeiroNome} ${segundoNome}`;
+            const cadastrarUsuaria = await cadastrar(nomeCompleto, email, senha);
             router.push("/auth/login");
         } catch (erro) {
-            setErrorMensagem(erro.message);
+            if (erro.response && erro.response.status === 409) {
+                setErrorMensagem("Usuário com este email já existe. Por favor, escolha outro email.");
+            } else {
+                setErrorMensagem("Erro ao enviar requisição: " + erro.message);
+            }
         }
     };
 
