@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { cadastrar } from "@/pages/services/auth/CadastroService";
+import { cadastrar } from "@/services/auth/CadastroService";
+
 import PublicIcon from "@mui/icons-material/Public";
 
 import {
@@ -27,7 +28,7 @@ export default function CadastroForm() {
 
     try {
       const cadastrarUsuaria = await cadastrar(nome, email, senha);
-      router.push("/auth/login");
+      router.push("/auth/logar");
     } catch (erro) {
       if (erro.response && erro.response.status === 409) {
         setErrorMensagem(

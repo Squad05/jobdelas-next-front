@@ -4,7 +4,7 @@ import NavbarAuth from "@/components/NavbarAuth";
 import FormLogin from "@/components/FormLogin";
 import InfoSecaoAuth from "@/components/InfoSecaoAuth";
 
-export default function Login() {
+export default function Logar() {
   return (
     <>
       <Head>
