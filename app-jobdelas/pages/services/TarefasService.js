@@ -9,7 +9,7 @@ class TarefasService {
       };
 
       const response = await axios.post(
-        "http://localhost:8080/tarefas",
+        "https://jobdelas-khy0.onrender.com/tarefas",
         tarefa,
         { headers }
       );
@@ -24,7 +24,7 @@ class TarefasService {
   async listarTarefas() {
     try {
       const response = await axios.get(
-        "http://localhost:8080/tarefas"
+        "https://jobdelas-khy0.onrender.com/tarefas"
       );
       return response.data;
     } catch (error) {
@@ -40,7 +40,7 @@ class TarefasService {
       };
 
       const response = await axios.get(
-        `http://localhost:8080/tarefas/${id}`,
+        `https://jobdelas-khy0.onrender.com/tarefas/${id}`,
         { headers }
       );
 

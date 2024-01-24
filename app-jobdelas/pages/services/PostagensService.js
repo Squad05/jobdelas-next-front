@@ -9,7 +9,7 @@ class PostagemService {
       };
 
       const response = await axios.post(
-        "http://localhost:8080/postagens",
+        "https://jobdelas-khy0.onrender.com/postagens",
         postagem,
         { headers }
       );
@@ -24,7 +24,7 @@ class PostagemService {
   async listarTodasPostagens() {
     try {
       const response = await axios.get(
-        "http://localhost:8080/postagens"
+        "https://jobdelas-khy0.onrender.com/postagens"
       );
       return response.data;
     } catch (error) {
@@ -40,7 +40,7 @@ class PostagemService {
       };
 
       const response = await axios.get(
-        `http://localhost:8080/postagens/${id}`,
+        `https://jobdelas-khy0.onrender.com/postagens/${id}`,
         { headers }
       );
 
