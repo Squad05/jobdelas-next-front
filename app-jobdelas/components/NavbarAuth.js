@@ -27,7 +27,7 @@ export default function NavbarAuth({ linkRota, nomeRota }) {
           <HomeIcon className={styles.estilo_icon} />
         </Link>
 
-        <Link href="/cadastrar" className={styles.estilo_link} passHref>
+        <Link href="/auth/cadastrar" className={styles.estilo_link} passHref>
           Conectar
           <AddCircleOutlineIcon className={styles.estilo_icon} />
         </Link>

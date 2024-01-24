@@ -1,3 +1,34 @@
 .info_container {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.img_principal {
+    margin-top: 10px;
+   width: auto;
+   height: 350px;
+
+}
+
+.infos {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.caixa_info {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa_info .texto_info {
+    font-size: 18px;
+    text-shadow: 2px 2px 2px #0000003a;
 }

@@ -3,6 +3,7 @@ import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { cadastrar } from "@/pages/services/auth/CadastroService";
+import PublicIcon from "@mui/icons-material/Public";
 
 import {
   FormControl,
@@ -16,8 +17,7 @@ import {
 export default function CadastroForm() {
   const router = useRouter();
 
-  const [primeiroNome, setPrimeiroNome] = useState("");
-  const [segundoNome, setSegundoNome] = useState("");
+  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [errorMensagem, setErrorMensagem] = useState("");
@@ -26,7 +26,6 @@ export default function CadastroForm() {
     e.preventDefault();
 
     try {
-      const nome = `${primeiroNome} ${segundoNome}`;
       const cadastrarUsuaria = await cadastrar(nome, email, senha);
       router.push("/auth/login");
     } catch (erro) {
@@ -45,10 +44,14 @@ export default function CadastroForm() {
       <Card className={styles.main_form}>
         <CardContent className={styles.card_content}>
           <Box className={styles.cabecalho_fomulario}>
-            <Typography variant="h3" component="h3" sx={{ mb: 2 }}>
+            <Typography className={styles.titulo} variant="h3" component="h3">
               Cadastre-se!
             </Typography>
             <Typography sx={{ color: "#B378FF" }}>
+              <PublicIcon
+                fontSize="small"
+                style={{ verticalAlign: "middle", marginRight: "4px" }}
+              />
               <span>Faça conexões por todo o mundo</span>
             </Typography>
           </Box>
@@ -56,27 +59,14 @@ export default function CadastroForm() {
           <div className={styles.main_formulario}>
             <form className={styles.formulario} onSubmit={handleSubmit}>
               <InputLabel className={styles.form_label} htmlFor="primeiroNome">
-                Primeiro Nome
+                Nome Completo
               </InputLabel>
               <FormControl fullWidth className={styles.formulario_formcontrol}>
                 <input
-                  id="primeiroNome"
+                  id="nome"
                   className={styles.formulario_input}
-                  value={primeiroNome}
-                  onChange={(e) => setPrimeiroNome(e.target.value)}
-                  required
-                />
-              </FormControl>
-
-              <InputLabel className={styles.form_label} htmlFor="segundoNome">
-                Segundo Nome
-              </InputLabel>
-              <FormControl fullWidth className={styles.formulario_formcontrol}>
-                <input
-                  id="segundoNome"
-                  className={styles.formulario_input}
-                  value={segundoNome}
-                  onChange={(e) => setSegundoNome(e.target.value)}
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
                   required
                 />
               </FormControl>
@@ -127,7 +117,11 @@ export default function CadastroForm() {
           </div>
 
           <div className={styles.container_footer}>
-            <Typography variant="h4" component="h4">
+            <Typography
+              className={styles.texto_footer}
+              variant="h4"
+              component="h4"
+            >
               Já tem uma conta?
               <Link href="/auth/login" className={styles.linkespecial}>
                 {" "}
