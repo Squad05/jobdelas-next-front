@@ -1,0 +1,19 @@
+.userbody {
+    display: flex;
+    justify-content: center;
+
+}
+
+.maincontant {
+    width: 60%;
+}
+
+.content {
+    border: 1px solid black;
+}
+
+.sidebox {
+    border: 1px solid black;
+    margin-right: 20px;
+    width: 18%;
+}
