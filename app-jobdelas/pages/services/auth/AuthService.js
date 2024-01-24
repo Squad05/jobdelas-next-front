@@ -8,7 +8,7 @@ const login = async (email, senha) => {
     };
 
     const response = await axios.post(
-      "http://localhost:8080/auth/logar",
+      "https://jobdelas-khy0.onrender.com/auth/logar",
       dados
     );
 

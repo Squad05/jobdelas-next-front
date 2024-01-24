@@ -11,7 +11,7 @@ const cadastrar = async (nome, email, senha) => {
 
     console.log(dados);
     const response = await axios.post(
-      "http://localhost:8080/auth/cadastrar",
+      "https://jobdelas-khy0.onrender.com/auth/cadastrar",
       dados
     );
   } catch (erro) {
