@@ -1,0 +1,72 @@
+.navbarSocialContainer {
+}
+
+.userNavbar, .navBarInferior {
+    padding: 8px 40px;
+
+}
+
+/* USER INFO DIV */
+
+
+.userNavbar {
+    background-color:#0D0117;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.userName {
+    color: white;
+}
+
+
+/* NAVSOCIAL LINKS */
+.navBarInferior {
+    background-color:#B378FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navSocialLinks {
+    display: flex;
+    gap: 30px;
+
+}
+
+.navSocialLinks .icon {
+    color: white;
+}
+
+.navSocialLinks .estilo_link {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
+.searchBar input  {
+    height: 30px;
+    border-radius: 10px;
+    padding: 3px;
+    border: none;
+    box-shadow: 2px 2px 4px #0d01170e;
+}
+
+.searchBar .searchIcon {
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px #0d01170e;
+
+}
