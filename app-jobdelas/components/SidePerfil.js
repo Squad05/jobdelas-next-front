@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { Box, Typography, Button, Divider } from "@mui/material";
 import styles from "../styles/SidePerfil.module.css";
 import { CheckCircle, Lightbulb, Message } from "@mui/icons-material";
+import LogoutService from "@/services/auth/LogoutService";
+import { useRouter } from "next/router";
 
 export const SidePerfil = () => {
+
+  const router = useRouter();
+
   const [values, setValues] = useState({
     primeiroNome: "João",
     segundoNome: "Silva",
@@ -12,16 +17,11 @@ export const SidePerfil = () => {
     postagensFeitas: 10,
   });
 
-  const profileLink = "https://seu-site.com/meu-perfil";
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(profileLink).then(
-      function () {},
-      function (err) {
-        console.error("Erro ao copiar o link: ", err);
-      }
-    );
+  const handleLogout = () => {
+    LogoutService.logout();
+    router.push("/");
   };
+
 
   return (
     <div className={styles.side_container}>
@@ -66,6 +66,9 @@ export const SidePerfil = () => {
 
         <div className={styles.footer_box}>
           <Button className={styles.botao_perfil}>Perfil</Button>
+        </div>
+        <div className={styles.footer_box}>
+          <Button onClick={handleLogout} sx={{ marginTop: 2 }} className={styles.botao_perfil}>Logout</Button>
         </div>
       </Box>
     </div>

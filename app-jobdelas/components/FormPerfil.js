@@ -11,30 +11,71 @@ import {
   Grid,
 } from "@mui/material";
 import { AccountCircle, Update } from "@mui/icons-material";
-
+import UserService from "@/services/UserService";
 import styles from "../styles/FormPerfil.module.css";
+import { useRouter } from "next/router";
 
 export const ConfiguracaoUser = () => {
   const [values, setValues] = useState({
-    primeiroNome: "",
-    segundoNome: "",
+    nome: "",
     email: "",
+    cep: "",
+    status: "",
     senha: "",
     confirmarSenha: "",
-    status: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
+  const token = localStorage.getItem("token");
+  const router = useRouter();
+
+  const handleChange = useCallback((event) => {
+    setValues((prevState) => ({
+      ...prevState,
+      [event.target.name]: event.target.value,
     }));
+  }, []);
+
+
+  const obterDetalhesUsuaria = async () => {
+    try {
+      const detalhesUsuaria = await UserService.detalhesUsuaria(token);
+
+      setValues({
+        nome: detalhesUsuaria.nome,
+        email: detalhesUsuaria.email,
+        cep: detalhesUsuaria.cep,
+        status: detalhesUsuaria.status,
+        senha: "",
+        confirmarSenha: "",
+      });
+    } catch (error) {
+      console.error("Erro ao obter detalhes do usuária:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (token) {
+      obterDetalhesUsuaria();
+    } else {
+      router.push("/logar");
+    }
+  }, [token, router]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await UserService.editarUsuaria(token, values);
+
+      router.push("/social/feed");
+    } catch (error) {
+      console.error("Erro ao atualizar usuária:", error);
+    }
   };
 
   return (
     <div className={styles.container_form}>
-      <form className={styles.estilo_form}>
+      <form className={styles.estilo_form} onSubmit={handleSubmit}>
         <div className={styles.form_header}>
           <Typography className={styles.titulo_header}>
             <AccountCircle className={styles.titulo_icon} /> Conta
@@ -52,35 +93,35 @@ export const ConfiguracaoUser = () => {
                   className={styles.titulo_input}
                   htmlFor="primeiroNome"
                 >
-                  Nome
+                  Nome Completo
                 </InputLabel>
                 <input
-
-                  id="primeiroNome"
+                  id="nome"
                   className={styles.form_input}
-                  name="primeiroNome"
-                  value={values.primeiroNome}
+                  name="nome"
+                  value={values.nome}
                   onChange={handleChange}
                 />
 
-                <InputLabel className={styles.titulo_input} htmlFor="email">
-                  Email
+                <InputLabel
+                  className={styles.titulo_input}
+                  htmlFor="cep"
+                >
+                  Cep
                 </InputLabel>
                 <input
-
-                  id="email"
+                  id="cep"
                   className={styles.form_input}
-                  name="email"
-                  type="email"
-                  value={values.email}
+                  name="cep"
+                  value={values.cep}
                   onChange={handleChange}
                 />
+
 
                 <InputLabel className={styles.titulo_input} htmlFor="senha">
                   Senha
                 </InputLabel>
                 <input
-
                   id="senha"
                   className={styles.form_input}
                   name="senha"
@@ -93,18 +134,15 @@ export const ConfiguracaoUser = () => {
 
             <Grid item xs={6}>
               <Stack spacing={2}>
-                <InputLabel
-                  className={styles.titulo_input}
-                  htmlFor="segundoNome"
-                >
-                  Sobrenome
+                <InputLabel className={styles.titulo_input} htmlFor="email">
+                  Email
                 </InputLabel>
                 <input
-
-                  id="segundoNome"
+                  id="email"
                   className={styles.form_input}
-                  name="segundoNome"
-                  value={values.segundoNome}
+                  name="email"
+                  type="email"
+                  value={values.email}
                   onChange={handleChange}
                 />
 
@@ -112,7 +150,6 @@ export const ConfiguracaoUser = () => {
                   Status
                 </InputLabel>
                 <input
-
                   id="status"
                   className={styles.form_input}
                   name="status"
@@ -127,7 +164,6 @@ export const ConfiguracaoUser = () => {
                   Senha (Confirmação)
                 </InputLabel>
                 <input
-              
                   id="confirmarSenha"
                   className={styles.form_input}
                   name="confirmarSenha"
