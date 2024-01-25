@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Divider } from "@mui/material";
 import styles from "../styles/SidePerfil.module.css";
 import { CheckCircle, Lightbulb, Message } from "@mui/icons-material";
 
@@ -45,13 +45,14 @@ export const SidePerfil = () => {
               {values.vagasAplicadas} vagas aplicadas
             </Typography>
           </div>
-
+          <Divider className={styles.customDivider} />
           <div className={styles.info_item}>
             <Lightbulb className={styles.info_icon} />
             <Typography mt={1}>
               {values.oportunidades} cursos iniciados
             </Typography>
           </div>
+          <Divider className={styles.customDivider} />
 
           <div className={styles.info_item}>
             <Message className={styles.info_icon} />
@@ -60,6 +61,7 @@ export const SidePerfil = () => {
               {values.postagensFeitas} conversas iniciadas
             </Typography>
           </div>
+          <Divider className={styles.customDivider} />
         </div>
 
         <div className={styles.footer_box}>

@@ -1,7 +1,7 @@
 .container_form {
     width: 70%;
     padding: 30px 20px;
-    border: 1px solid #B378FF;
+    border: 1px solid #b378ff88;
     border-radius: 5px;
 
 }
@@ -34,11 +34,12 @@
 .botao_form {
     height: 38px;
     font-weight: 600;
-    background: linear-gradient(180deg, #0D0117 85%, #B378FF 90%); /* Cores sólidas sem gradiente */
+    background: linear-gradient(180deg, #B378FF   85%, #0D0117 90%); /* Cores sólidas sem gradiente */
+
 }
 
 .botao_form:hover {
-    background: linear-gradient(180deg, #B378FF   85%, #0D0117 90%); /* Cores sólidas sem gradiente */
+    background: linear-gradient(180deg, #0D0117 85%, #B378FF 90%); /* Cores sólidas sem gradiente */
 }
 
 
