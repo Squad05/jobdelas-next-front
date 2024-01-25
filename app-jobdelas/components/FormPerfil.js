@@ -5,10 +5,13 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  Typography,
   Stack,
   InputLabel,
   Grid,
 } from "@mui/material";
+import { AccountCircle, Update } from "@mui/icons-material";
+
 import styles from "../styles/FormPerfil.module.css";
 
 export const ConfiguracaoUser = () => {
@@ -23,34 +26,53 @@ export const ConfiguracaoUser = () => {
 
   return (
     <div className={styles.container_form}>
-      <form className={styles.conteudo}>
-        <CardHeader subheader="Atualize sua conta" title="Conta" />
+      <form className={styles.estilo_form}>
+        <div className={styles.form_header}>
+          <Typography className={styles.titulo_header}>
+            <AccountCircle className={styles.titulo_icon} /> Conta
+          </Typography>
+          <Typography variant="subtitle1" className={styles.subtitulo_header}>
+            Atualize sua conta <Update />
+          </Typography>
+        </div>
 
         <CardContent>
           <Grid container spacing={2}>
             <Grid item xs={6}>
               <Stack spacing={2}>
-                <InputLabel htmlFor="primeiroNome">Nome</InputLabel>
+                <InputLabel
+                  className={styles.titulo_input}
+                  htmlFor="primeiroNome"
+                >
+                  Nome
+                </InputLabel>
                 <input
                   fullWidth
                   id="primeiroNome"
+                  className={styles.form_input}
                   name="primeiroNome"
                   value={values.primeiroNome}
                 />
 
-                <InputLabel htmlFor="email">Email</InputLabel>
+                <InputLabel className={styles.titulo_input} htmlFor="email">
+                  Email
+                </InputLabel>
                 <input
                   fullWidth
                   id="email"
+                  className={styles.form_input}
                   name="email"
                   type="email"
                   value={values.email}
                 />
 
-                <InputLabel htmlFor="senha">Senha</InputLabel>
+                <InputLabel className={styles.titulo_input} htmlFor="senha">
+                  Senha
+                </InputLabel>
                 <input
                   fullWidth
                   id="senha"
+                  className={styles.form_input}
                   name="senha"
                   type="password"
                   value={values.senha}
@@ -60,28 +82,41 @@ export const ConfiguracaoUser = () => {
 
             <Grid item xs={6}>
               <Stack spacing={2}>
-                <InputLabel htmlFor="segundoNome">Sobrenome</InputLabel>
+                <InputLabel
+                  className={styles.titulo_input}
+                  htmlFor="segundoNome"
+                >
+                  Sobrenome
+                </InputLabel>
                 <input
                   fullWidth
                   id="segundoNome"
+                  className={styles.form_input}
                   name="segundoNome"
                   value={values.segundoNome}
                 />
 
-                <InputLabel htmlFor="status">Status</InputLabel>
+                <InputLabel className={styles.titulo_input} htmlFor="status">
+                  Status
+                </InputLabel>
                 <input
                   fullWidth
                   id="status"
+                  className={styles.form_input}
                   name="status"
                   value={values.status}
                 />
 
-                <InputLabel htmlFor="confirmarSenha">
+                <InputLabel
+                  className={styles.titulo_input}
+                  htmlFor="confirmarSenha"
+                >
                   Senha (Confirmação)
                 </InputLabel>
                 <input
                   fullWidth
                   id="confirmarSenha"
+                  className={styles.form_input}
                   name="confirmarSenha"
                   type="password"
                   value={values.confirmarSenha}
@@ -91,8 +126,12 @@ export const ConfiguracaoUser = () => {
           </Grid>
         </CardContent>
 
-        <CardActions sx={{ justifyContent: "flex-start", marginLeft: 1 }}>
-          <Button variant="contained" type="submit">
+        <CardActions sx={{ justifyContent: "flex-end", marginLeft: 1 }}>
+          <Button
+            className={styles.botao_form}
+            variant="contained"
+            type="submit"
+          >
             Atualizar
           </Button>
         </CardActions>

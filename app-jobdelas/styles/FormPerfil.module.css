@@ -1,3 +1,68 @@
 .container_form {
     width: 70%;
+    padding: 30px 20px;
+    border: 1px solid #B378FF;
+    border-radius: 5px;
+
+}
+
+.estilo_form {
+    color: #0D0117;
+
+}
+
+.form_header {
+    padding: 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.form_header .titulo_header {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.titulo_icon {
+    font-size: 40px;
+}
+
+.botao_form {
+    height: 38px;
+    font-weight: 600;
+    background: linear-gradient(180deg, #0D0117 85%, #B378FF 90%); /* Cores sólidas sem gradiente */
+}
+
+.botao_form:hover {
+    background: linear-gradient(180deg, #B378FF   85%, #0D0117 90%); /* Cores sólidas sem gradiente */
+}
+
+
+
+.form_header .subtitulo_header {
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.form_input {
+    height: 27px;
+    padding: 3px;
+    border-radius: 5px;
+    color: #0D0117;
+    border: 1px solid #B378FF;
+}
+
+.form_input:focus {
+    color: #0D0117;
+    outline: none;
+}
+
+.titulo_input {
+    color: #0D0117;
 }
