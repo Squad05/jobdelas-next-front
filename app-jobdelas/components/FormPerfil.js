@@ -24,6 +24,14 @@ export const ConfiguracaoUser = () => {
     status: "",
   });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className={styles.container_form}>
       <form className={styles.estilo_form}>
@@ -47,35 +55,38 @@ export const ConfiguracaoUser = () => {
                   Nome
                 </InputLabel>
                 <input
-                  fullWidth
+
                   id="primeiroNome"
                   className={styles.form_input}
                   name="primeiroNome"
                   value={values.primeiroNome}
+                  onChange={handleChange}
                 />
 
                 <InputLabel className={styles.titulo_input} htmlFor="email">
                   Email
                 </InputLabel>
                 <input
-                  fullWidth
+
                   id="email"
                   className={styles.form_input}
                   name="email"
                   type="email"
                   value={values.email}
+                  onChange={handleChange}
                 />
 
                 <InputLabel className={styles.titulo_input} htmlFor="senha">
                   Senha
                 </InputLabel>
                 <input
-                  fullWidth
+
                   id="senha"
                   className={styles.form_input}
                   name="senha"
                   type="password"
                   value={values.senha}
+                  onChange={handleChange}
                 />
               </Stack>
             </Grid>
@@ -89,22 +100,24 @@ export const ConfiguracaoUser = () => {
                   Sobrenome
                 </InputLabel>
                 <input
-                  fullWidth
+
                   id="segundoNome"
                   className={styles.form_input}
                   name="segundoNome"
                   value={values.segundoNome}
+                  onChange={handleChange}
                 />
 
                 <InputLabel className={styles.titulo_input} htmlFor="status">
                   Status
                 </InputLabel>
                 <input
-                  fullWidth
+
                   id="status"
                   className={styles.form_input}
                   name="status"
                   value={values.status}
+                  onChange={handleChange}
                 />
 
                 <InputLabel
@@ -114,12 +127,13 @@ export const ConfiguracaoUser = () => {
                   Senha (Confirmação)
                 </InputLabel>
                 <input
-                  fullWidth
+              
                   id="confirmarSenha"
                   className={styles.form_input}
                   name="confirmarSenha"
                   type="password"
                   value={values.confirmarSenha}
+                  onChange={handleChange}
                 />
               </Stack>
             </Grid>
