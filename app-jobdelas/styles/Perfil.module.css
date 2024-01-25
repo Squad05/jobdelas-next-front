@@ -1,19 +1,8 @@
-.userbody {
+.container_conteudo{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 20px 30px;
 
 }
 
-.maincontant {
-    width: 60%;
-}
 
-.content {
-    border: 1px solid black;
-}
-
-.sidebox {
-    border: 1px solid black;
-    margin-right: 20px;
-    width: 18%;
-}

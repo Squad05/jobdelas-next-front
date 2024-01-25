@@ -38,7 +38,7 @@ export default function NavbarSocial() {
           <Link href="/social/vagas" className={styles.estilo_link}>
             <WorkIcon className={styles.icon} /> <Typography>Vagas</Typography>
           </Link>
-          <Link href="/social/configuracoes" className={styles.estilo_link}>
+          <Link href="/social/config" className={styles.estilo_link}>
             <SettingsIcon className={styles.icon} />
             <Typography>Configurações</Typography>
           </Link>
