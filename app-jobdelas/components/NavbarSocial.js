@@ -8,7 +8,7 @@ import styles from "../styles/NavbarSocial.module.css";
 import Link from "next/link";
 import Logo from "./Logo";
 import { Box, Typography } from "@mui/material";
-import { Search } from "@mui/icons-material";
+import { Search, AccountCircle, HomeWork } from "@mui/icons-material";
 
 export default function NavbarSocial() {
   return (
@@ -29,6 +29,10 @@ export default function NavbarSocial() {
 
       <div className={styles.navBarInferior}>
         <div className={styles.navSocialLinks}>
+          <Link href="/social/feed" className={styles.estilo_link}>
+            <HomeWork className={styles.icon} />
+            <Typography>Inicio</Typography>
+          </Link>
           <Link href="/social/chat" className={styles.estilo_link}>
             <ChatIcon className={styles.icon} /> <Typography>Chat</Typography>
           </Link>
@@ -39,8 +43,8 @@ export default function NavbarSocial() {
             <WorkIcon className={styles.icon} /> <Typography>Vagas</Typography>
           </Link>
           <Link href="/social/config" className={styles.estilo_link}>
-            <SettingsIcon className={styles.icon} />
-            <Typography>Configurações</Typography>
+            <AccountCircle className={styles.icon} />
+            <Typography>Perfil</Typography>
           </Link>
         </div>
         <div className={styles.searchBar}>
