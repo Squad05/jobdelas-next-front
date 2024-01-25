@@ -1,10 +1,18 @@
 import Head from "next/head";
-
 import NavbarSocial from "@/components/NavbarSocial";
 import FormPostagem from "@/components/FormPostagem";
 import styles from "../../../styles/Feed.module.css";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Perfil() {
+
+  const { autenticado } = useAuth();
+
+  if (!autenticado) {
+    return null;
+  }
+
+
   return (
     <>
       <Head>

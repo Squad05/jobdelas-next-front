@@ -26,7 +26,7 @@ export default function FormLogin() {
     try {
       const token = await login(email, senha);
       localStorage.setItem("token", token);
-      router.push("/");
+      router.push("/social/feed");
     } catch (erro) {
       setErrorMensagem(erro.message);
     }
