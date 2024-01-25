@@ -2,6 +2,7 @@ import Head from "next/head";
 import NavbarSocial from "@/components/NavbarSocial";
 import styles from "../../../styles/Feed.module.css";
 import { useAuth } from "@/hooks/useAuth";
+import ListaCursos from "@/components/CardCursos";
 
 export default function Cursos() {
 
@@ -18,6 +19,7 @@ export default function Cursos() {
             </Head>
             <main className={styles.feedBody}>
                 <NavbarSocial />
+                <ListaCursos />
             </main>
         </>
     )

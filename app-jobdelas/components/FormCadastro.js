@@ -124,7 +124,7 @@ export default function CadastroForm() {
               component="h4"
             >
               Já tem uma conta?
-              <Link href="/auth/login" className={styles.linkespecial}>
+              <Link href="/auth/logar" className={styles.linkespecial}>
                 {" "}
                 Faça login{" "}
               </Link>
