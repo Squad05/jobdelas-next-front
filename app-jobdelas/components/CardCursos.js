@@ -5,10 +5,11 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Grid } from '@mui/material';
 import FiltroCursos from './Filtro';
+import Link from 'next/link';
 
-const CursoCard = ({ duracao, materia, categoria }) => {
+const CursoCard = ({ curso, duracao, materia, categoria }) => {
     const handleVerAulas = () => {
-       
+
         console.log(`Ver aulas de ${materia}`);
     };
 
@@ -24,9 +25,11 @@ const CursoCard = ({ duracao, materia, categoria }) => {
                 <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
                     Categoria: {categoria}
                 </Typography>
-                <Button onClick={handleVerAulas} variant="contained" color="primary" sx={{ marginTop: 2 }}>
-                    Ver Aulas
-                </Button>
+                <Link href={`/social/cursos/aulas`}>
+                    <Button onClick={handleVerAulas} variant="contained" color="primary" sx={{ marginTop: 2 }}>
+                        Ver Aulas
+                    </Button>
+                </Link>
             </CardContent>
         </Card>
     );
@@ -34,12 +37,12 @@ const CursoCard = ({ duracao, materia, categoria }) => {
 
 const ListaCursos = () => {
     const cursos = [
-        { duracao: '6 meses', materia: 'Matemática', categoria: 'Ciências' },
-        { duracao: '7 meses', materia: 'Java', categoria: 'Tecnologia' },
-        { duracao: '8 meses', materia: 'Física', categoria: 'Ciências' },
-        { duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
-        { duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
-        { duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
+        { id: 1, duracao: '6 meses', materia: 'Matemática', categoria: 'Ciências' },
+        { id: 2, duracao: '7 meses', materia: 'Java', categoria: 'Tecnologia' },
+        { id: 3, duracao: '8 meses', materia: 'Física', categoria: 'Ciências' },
+        { id: 4, duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
+        { id: 5, duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
+        { id: 6, duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
     ];
 
     const categorias = ['Ciências', 'Tecnologia', 'Arte'];
