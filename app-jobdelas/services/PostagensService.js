@@ -9,44 +9,30 @@ class PostagemService {
       };
 
       const response = await axios.post(
-        "https://jobdelas-khy0.onrender.com/postagens",
+        "https://jobdelas-khy0.onrender.com/postagem",
         postagem,
         { headers }
       );
 
       return response.data;
     } catch (error) {
-      console.error("Erro ao postar nova vaga:", error);
+      console.error("Erro ao postar nova postagem:", error);
       throw error;
     }
   }
 
-  async listarTodasPostagens() {
+  async listarTodasPostagens(token) {
     try {
-      const response = await axios.get(
-        "https://jobdelas-khy0.onrender.com/postagens"
-      );
-      return response.data;
-    } catch (error) {
-      console.error("Erro ao buscar vagas:", error);
-      throw error;
-    }
-  }
-
-  async listarPostagemPorCatagoria(id, token) {
-    try {
+     
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-
       const response = await axios.get(
-        `https://jobdelas-khy0.onrender.com/postagens/${id}`,
-        { headers }
+        "https://jobdelas-khy0.onrender.com/postagem", { headers}
       );
-
       return response.data;
     } catch (error) {
-      console.error("Erro ao buscar vagas do usuário:", error);
+      console.error("Erro ao buscar postagens:", error);
       throw error;
     }
   }
