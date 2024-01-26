@@ -1,0 +1,78 @@
+.estilo_card {
+    border-radius: 0px;
+    padding: 0 !important;
+    border: 1px solid #0d01170a ;
+
+}
+
+
+
+.card_body {
+    padding: 0 !important;
+}
+
+.card_body .titulo {
+    color: white;
+    background: linear-gradient(90deg,  #0D0117 95%, #B378FF 5%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 5px;
+    margin: 0;
+
+
+}
+
+.texto_card {
+    padding: 5px;
+}
+
+.botao_card {
+    background-color: #B378FF !important;
+    color: #fff !important;
+    border: none !important;
+    width: 100px;
+    height: 35px;
+    margin: 10px !important;
+    gap:5px;
+
+
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 230px;
+}
+
+.titulo_filtro {
+    background-color: #0D0117;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    text-align: center;
+
+}
+
+.container_vagas {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 25px !important;
+    padding: 0 !important;
+
+}
+
+.botaoFiltro {
+    color: white !important;
+    text-shadow: 2px 2px 2px #0d011754;
+}
+
+.container_botao {
+    display: flex;
+    justify-content: flex-end;
+}

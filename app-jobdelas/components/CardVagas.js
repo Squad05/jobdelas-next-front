@@ -1,75 +1,114 @@
-import React, { useState } from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { Grid } from '@mui/material';
-import FiltroCursos from './Filtro';
-
-
-const VagaCard = ({ funcao, localizacao, salario, status }) => {
-    return (
-        <Card>
-            <CardContent>
-                <Typography variant="h6" component="div">
-                    Função: {funcao}
-                </Typography>
-                <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
-                    Localização: {localizacao}
-                </Typography>
-                <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
-                    Salário: {salario}
-                </Typography>
-                <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
-                    Status: {status}
-                </Typography>
-            </CardContent>
-        </Card>
-    );
-};
-
+// ListaVagas.js
+import React, { useState, useEffect } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import { Box, Grid } from "@mui/material";
+import FiltroVagas from "./FiltroVagas";
+import styles from "../styles/CardVaga.module.css";
+import WorkIcon from "@mui/icons-material/Work";
+import VagaService from "../services/VagaService";
 
 const ListaVagas = () => {
-    const vagas = [
-        { funcao: 'Desenvolvedor Front-end', localizacao: 'São Paulo, SP', salario: '$5000', status: 'Aberta' },
-        { funcao: 'Analista de Marketing', localizacao: 'Rio de Janeiro, RJ', salario: '$4500', status: 'Fechada' },
-        { funcao: 'Engenheiro de Software', localizacao: 'Belo Horizonte, MG', salario: '$6000', status: 'Aberta' },
-        { funcao: 'Engenheiro de Software', localizacao: 'Belo Horizonte, MG', salario: '$6000', status: 'Aberta' },
-     
-    ];
+  const [vagas, setVagas] = useState([]);
+  const [vagasFiltradas, setVagasFiltradas] = useState([]);
+  const [numColunas, setNumColunas] = useState(2);
 
-    const [vagasFiltradas, setVagasFiltradas] = useState(vagas);
-    const [numColunas, setNumColunas] = useState(2);
-
-    const handleFiltrar = (status) => {
-        if (status === null) {
-            setVagasFiltradas(vagas);
-        } else {
-            const vagasFiltradas = vagas.filter(vaga => vaga.status === status);
-            setVagasFiltradas(vagasFiltradas);
-        }
+  useEffect(() => {
+    const fetchVagas = async () => {
+      try {
+        const vagasData = await VagaService.listarVagas();
+        setVagas(vagasData);
+        setVagasFiltradas(vagasData);
+      } catch (error) {
+        console.error("Erro ao buscar vagas:", error);
+      }
     };
 
-    return (
+    fetchVagas();
+  }, []);
+
+  const handleFiltrar = (status) => {
+    if (status === "Todos") {
+      setVagasFiltradas(vagas);
+    } else {
+      const vagasFiltradas = vagas.filter(
+        (vaga) =>
+          (status === "Aberta" && vaga.status_vaga) ||
+          (status === "Fechada" && !vaga.status_vaga)
+      );
+      setVagasFiltradas(vagasFiltradas);
+    }
+  };
+
+  return (
+    <Grid container spacing={3}>
+      <Grid item xs={12} sm={3} className={styles.estilo_item_filtro}>
+        <FiltroVagas
+          categorias={["Todos", "Aberta", "Fechada"]}
+          onFiltrar={handleFiltrar}
+        />
+      </Grid>
+      <Grid item xs={12} sm={9} className={styles.container_vagas}>
         <Grid container spacing={3}>
-            <Grid item xs={12} sm={3}>
-                <FiltroCursos categorias={['Aberta', 'Fechada']} onFiltrar={handleFiltrar} />
+          {vagasFiltradas.map((vaga, index) => (
+            <Grid item xs={12} sm={numColunas === 1 ? 12 : 6} key={index}>
+              <Card
+                className={`${styles.estilo_card} ${
+                  styles[vaga.status_vaga ? "aberta" : "fechada"]
+                }`}
+              >
+                <CardContent className={styles.card_body}>
+                  <Typography
+                    className={styles.titulo}
+                    variant="h6"
+                    component="div"
+                  >
+                    {vaga.funcao}
+                  </Typography>
+                  <Typography
+                    className={styles.texto_card}
+                    sx={{ marginTop: 2 }}
+                  >
+                    Localização: {vaga.localizacao}
+                  </Typography>
+                  <Typography
+                    className={styles.texto_card}
+                    sx={{ marginTop: 2 }}
+                  >
+                    Salário: {vaga.salario}
+                  </Typography>
+                  <Typography
+                    className={styles.texto_card}
+                    sx={{ marginTop: 2 }}
+                  >
+                    Status: {vaga.status_vaga ? "Aberta" : "Fechada"}
+                  </Typography>
+                  <Box className={styles.container_botao}>
+                    <Button
+                      className={styles.botao_card}
+                      onClick={() =>
+                        alert(
+                          `Você se candidatou para a vaga de ${vaga.funcao}`
+                        )
+                      }
+                      variant="outlined"
+                      color="primary"
+                    >
+                      {" "}
+                      <WorkIcon />
+                      Aplicar
+                    </Button>
+                  </Box>
+                </CardContent>
+              </Card>
             </Grid>
-            <Grid item xs={12} sm={9} >
-                <Grid container spacing={3}>
-                    {vagasFiltradas.map((vaga, index) => (
-                        <Grid item xs={12} sm={numColunas === 1 ? 12 : 6} key={index}>
-                            <VagaCard
-                                funcao={vaga.funcao}
-                                localizacao={vaga.localizacao}
-                                salario={vaga.salario}
-                                status={vaga.status}
-                            />
-                        </Grid>
-                    ))}
-                </Grid>
-            </Grid>
+          ))}
         </Grid>
-    );
+      </Grid>
+    </Grid>
+  );
 };
 
 export default ListaVagas;
