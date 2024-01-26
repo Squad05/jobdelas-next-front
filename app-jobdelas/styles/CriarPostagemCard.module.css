@@ -1,0 +1,38 @@
+
+.estilo_card {
+    border-radius: 20px !important; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 16px; 
+    border: 1px solid #B378FF;
+    border-bottom: 7px solid   #B378FF;
+  }
+  
+  .conteudo_card {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 16px;
+  }
+  
+  .cardHeader {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .estilo_botao {
+    background: linear-gradient(90deg,  #0D0117 95%, #B378FF 5%);
+    color: white !important;
+    width: 120px;
+  }
+
+  .estilo_caixaconteudo {
+    border: none !important;
+    outline: none !important;
+    border-radius: 0 !important; /* ou remova esta linha se não quiser bordas arredondadas */
+    box-shadow: none !important;
+  }
+  
+  .noBorder {
+    border: 1px solid #B378FF !important;
+  }

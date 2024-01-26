@@ -1,11 +1,10 @@
 import Head from "next/head";
-import FormPostagem from "@/components/FormPostagem";
 import styles from "../../../styles/Feed.module.css";
 import { useAuth } from "@/hooks/useAuth";
 import { Box } from "@mui/material";
 import NavbarSocial from "@/components/NavbarSocial";
-import SidePostagem from "@/components/SidePostagem";
-import PostagemCardList from "@/components/CardPost";
+import CriarPostagemCard from "@/components/CriarPostagemCard";
+import ListaPostagemCard from "@/components/ListaPostagemCard";
 
 export default function Perfil() {
   const { autenticado } = useAuth();
@@ -22,10 +21,9 @@ export default function Perfil() {
       <main className={styles.feedBody}>
         <NavbarSocial />
         <Box display="flex" justifyContent="center">
-          <SidePostagem />
-          <FormPostagem userName="João Silva" userPhoto="url_da_foto" />
+          <CriarPostagemCard />
         </Box>
-        <PostagemCardList />
+        <ListaPostagemCard />
       </main>
     </>
   );
