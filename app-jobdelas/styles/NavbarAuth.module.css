@@ -1,6 +1,6 @@
 .containerNav {
     min-width: 100%;
-    background-color: transparent;
+    background-color: transparent !important;
     display: flex;
     align-items: center;
     border: none;

@@ -5,7 +5,7 @@ const useAuth = () => {
   const [autenticado, setAutenticado] = useState(false);
   const router = useRouter();
 
-  const checarAutenticado = async () => {
+  const verificarAutenticacao = async () => {
     const token = localStorage.getItem("token");
 
     console.log(token);
@@ -18,10 +18,10 @@ const useAuth = () => {
   };
 
   useEffect(() => {
-    checarAutenticado();
+    verificarAutenticacao();
   }, []);
 
-  return { autenticado };
+  return { autenticado, verificarAutenticacao }; // Corrigi o nome da função aqui
 };
 
 export { useAuth };

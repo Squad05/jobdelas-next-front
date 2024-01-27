@@ -5,26 +5,23 @@ import { Box } from "@mui/material";
 import NavbarSocial from "@/components/NavbarSocial";
 import CriarPostagemCard from "@/components/CriarPostagemCard";
 import ListaPostagemCard from "@/components/ListaPostagemCard";
+import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 
 export default function Perfil() {
-  const { autenticado } = useAuth();
-
-  if (!autenticado) {
-    return null;
-  }
-
   return (
-    <>
-      <Head>
-        <title>Jobdelas</title>
-      </Head>
-      <main className={styles.feedBody}>
-        <NavbarSocial />
-        <Box display="flex" justifyContent="center">
-          <CriarPostagemCard />
-        </Box>
-        <ListaPostagemCard />
-      </main>
-    </>
+    <AuthenticatedRoute>
+      <>
+        <Head>
+          <title>Jobdelas</title>
+        </Head>
+        <main className={styles.feedBody}>
+          <NavbarSocial />
+          <Box display="flex" justifyContent="center">
+            <CriarPostagemCard />
+          </Box>
+          <ListaPostagemCard />
+        </main>
+      </>
+    </AuthenticatedRoute>
   );
 }

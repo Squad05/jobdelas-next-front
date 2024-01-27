@@ -6,7 +6,6 @@ import NavbarSocial from "@/components/NavbarSocial";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function Config() {
-
   const { autenticado } = useAuth();
 
   if (!autenticado) {
@@ -14,17 +13,19 @@ export default function Config() {
   }
 
   return (
-    <>
-      <Head>
-        <title>Jobdelas</title>
-      </Head>
-      <main className={styles.main_principal}>
-        <NavbarSocial />
-        <div className={styles.container_conteudo}>
-          <SidePerfil />
-          <ConfiguracaoUser />
-        </div>
-      </main>
-    </>
+    <AuthenticatedRoute>
+      <>
+        <Head>
+          <title>Jobdelas</title>
+        </Head>
+        <main className={styles.main_principal}>
+          <NavbarSocial />
+          <div className={styles.container_conteudo}>
+            <SidePerfil />
+            <ConfiguracaoUser />
+          </div>
+        </main>
+      </>
+    </AuthenticatedRoute>
   );
 }

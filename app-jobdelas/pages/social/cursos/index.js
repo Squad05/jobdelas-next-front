@@ -5,22 +5,23 @@ import { useAuth } from "@/hooks/useAuth";
 import ListaCursos from "@/components/CardCursos";
 
 export default function Cursos() {
+  const { autenticado } = useAuth();
 
-    const { autenticado } = useAuth();
+  if (!autenticado) {
+    return null;
+  }
 
-    if (!autenticado) {
-        return null;
-    }
-
-    return (
-        <>
-            <Head>
-                <title>Jobdelas</title>
-            </Head>
-            <main className={styles.feedBody}>
-                <NavbarSocial />
-               <ListaCursos />
-            </main>
-        </>
-    )
+  return (
+    <AuthenticatedRoute>
+      <>
+        <Head>
+          <title>Jobdelas</title>
+        </Head>
+        <main className={styles.feedBody}>
+          <NavbarSocial />
+          <ListaCursos />
+        </main>
+      </>
+    </AuthenticatedRoute>
+  );
 }

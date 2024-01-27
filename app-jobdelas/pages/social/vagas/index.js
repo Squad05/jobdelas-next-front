@@ -4,6 +4,7 @@ import styles from "../../../styles/Vagas.module.css";
 import { useAuth } from "@/hooks/useAuth";
 import ListaVagas from "@/components/CardVagas";
 import InicioPageVagas from "@/components/InicioPageVagas";
+import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 
 export default function Vagas() {
   const { autenticado } = useAuth();
@@ -13,17 +14,19 @@ export default function Vagas() {
   }
 
   return (
-    <>
-      <Head>
-        <title>Jobdelas</title>
-      </Head>
-      <main className={styles.container_principal}>
-        <NavbarSocial />
-        <div className={styles.container_conteudo}>
-          <InicioPageVagas />
-          <ListaVagas />
-        </div>
-      </main>
-    </>
+    <AuthenticatedRoute>
+      <>
+        <Head>
+          <title>Jobdelas</title>
+        </Head>
+        <main className={styles.container_principal}>
+          <NavbarSocial />
+          <div className={styles.container_conteudo}>
+            <InicioPageVagas />
+            <ListaVagas />
+          </div>
+        </main>
+      </>{" "}
+    </AuthenticatedRoute>
   );
 }
