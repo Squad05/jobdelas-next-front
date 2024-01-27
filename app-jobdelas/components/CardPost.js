@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent, Typography, Box, Divider, Grid, Container } from "@mui/material";
 import PostagensService from "@/services/PostagensService";
-import { extrairEmailDoToken } from "@/services/auth/EmailToken";
 
 const PostagemCard = ({ postagem }) => {
     return (
