@@ -28,7 +28,7 @@ const AuthenticatedRoute = ({ children }) => {
     verificarAutenticacao();
     verificarExpiracaoToken();
 
-    const intervalId = setInterval(verificarExpiracaoToken, 60000); // Verifica a cada minuto
+    const intervalId = setInterval(verificarExpiracaoToken, 60000); 
 
     return () => clearInterval(intervalId);
   }, [verificarAutenticacao]);

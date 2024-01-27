@@ -3,6 +3,7 @@ import NavbarSocial from "@/components/NavbarSocial";
 import styles from "../../../styles/Feed.module.css";
 import { useAuth } from "@/hooks/useAuth";
 import ListaCursos from "@/components/CardCursos";
+import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 
 export default function Cursos() {
   const { autenticado } = useAuth();

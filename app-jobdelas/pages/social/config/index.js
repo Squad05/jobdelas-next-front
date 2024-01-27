@@ -4,6 +4,7 @@ import Head from "next/head";
 import styles from "../../../styles/Perfil.module.css";
 import NavbarSocial from "@/components/NavbarSocial";
 import { useAuth } from "@/hooks/useAuth";
+import AuthenticatedRoute from "../../../components/AuthenticatedRoute";
 
 export default function Config() {
   const { autenticado } = useAuth();
