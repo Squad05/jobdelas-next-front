@@ -36,10 +36,14 @@
 }
 
 
-
-
 .estilo_link:hover {
     background: linear-gradient(90deg,  #ffffff 95%, #B378FF 5%);
     color: #B378FF ;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+@media screen and (max-width: 430px) {
+    .estilo_link:nth-child(3) {
+      display: none;
+    }
+  }
