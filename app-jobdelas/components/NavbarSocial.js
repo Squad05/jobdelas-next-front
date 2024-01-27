@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
-import SettingsIcon from "@mui/icons-material/Settings";
 import ChatIcon from "@mui/icons-material/Chat";
 import BookIcon from "@mui/icons-material/Book";
 import WorkIcon from "@mui/icons-material/Work";
@@ -9,21 +8,47 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { Box, Typography } from "@mui/material";
 import { Search, AccountCircle, HomeWork } from "@mui/icons-material";
+import UserService from "@/services/UserService";
 
 export default function NavbarSocial() {
+  const [nomeUsuario, setNomeUsuario] = useState("");
+  const [fotoUsuario, setFotoUsuario] = useState(null);
+
+
+  useEffect(() => {
+    const fetchUsuario = async () => {
+      try {
+        const userToken = localStorage.getItem("token");
+        const detalhesUsuario = await UserService.detalhesUsuaria(userToken);
+        setNomeUsuario(detalhesUsuario.nome);
+
+        if (detalhesUsuario.foto == null) {
+          setFotoUsuario("oi.png");
+        } else {
+          setFotoUsuario(detalhesUsuario.foto);
+        }
+      } catch (error) {
+        console.error("Erro ao obter detalhes do usuário:", error);
+      }
+    };
+
+    fetchUsuario();
+  }, []);
+
+
   return (
     <div className={styles.navbarSocialContainer}>
       <div className={styles.userNavbar}>
         <Logo />
 
         <div className={styles.userInfo}>
-          <p className={styles.userName}>Seu Nome</p>
+          <p className={styles.userName}>{nomeUsuario}</p>
 
           <Avatar
             alt="Foto do usuário"
-            src="/foto-usuario.jpg"
+            src={fotoUsuario}
             className={styles.userPhoto}
-          />
+          >{nomeUsuario.slice(0, 2).toUpperCase()}</Avatar>
         </div>
       </div>
 
