@@ -19,7 +19,7 @@ export default function Cursos() {
             </Head>
             <main className={styles.feedBody}>
                 <NavbarSocial />
-                <ListaCursos />
+               <ListaCursos />
             </main>
         </>
     )

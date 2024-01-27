@@ -1,4 +1,3 @@
-// ListaVagas.js
 import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -51,13 +50,12 @@ const ListaVagas = () => {
         />
       </Grid>
       <Grid item xs={12} sm={9} className={styles.container_vagas}>
-        <Grid container spacing={3}>
+        <Grid sx={{margin: 'auto'}} container spacing={3}>
           {vagasFiltradas.map((vaga, index) => (
             <Grid item xs={12} sm={numColunas === 1 ? 12 : 6} key={index}>
               <Card
-                className={`${styles.estilo_card} ${
-                  styles[vaga.status_vaga ? "aberta" : "fechada"]
-                }`}
+                className={`${styles.estilo_card} ${styles[vaga.status_vaga ? "aberta" : "fechada"]
+                  }`}
               >
                 <CardContent className={styles.card_body}>
                   <Typography

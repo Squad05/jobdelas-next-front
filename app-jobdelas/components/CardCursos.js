@@ -1,78 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import FiltroCursos from './Filtro';
+import styles from '../styles/CardVaga.module.css';
 import Link from 'next/link';
+import CursoService from '@/services/CursoService';
 
-const CursoCard = ({ curso, duracao, materia, categoria }) => {
-    const handleVerAulas = () => {
-
-        console.log(`Ver aulas de ${materia}`);
-    };
-
-    return (
-        <Card>
-            <CardContent>
-                <Typography variant="h6" component="div">
-                    Duração: {duracao}
-                </Typography>
-                <Typography variant="h5" component="div" sx={{ marginTop: 2 }}>
-                    Matéria: {materia}
-                </Typography>
-                <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
-                    Categoria: {categoria}
-                </Typography>
-                <Link href={`/social/cursos/aulas`}>
-                    <Button onClick={handleVerAulas} variant="contained" color="primary" sx={{ marginTop: 2 }}>
-                        Ver Aulas
-                    </Button>
-                </Link>
-            </CardContent>
-        </Card>
-    );
-};
 
 const ListaCursos = () => {
-    const cursos = [
-        { id: 1, duracao: '6 meses', materia: 'Matemática', categoria: 'Ciências' },
-        { id: 2, duracao: '7 meses', materia: 'Java', categoria: 'Tecnologia' },
-        { id: 3, duracao: '8 meses', materia: 'Física', categoria: 'Ciências' },
-        { id: 4, duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
-        { id: 5, duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
-        { id: 6, duracao: '5 meses', materia: 'Pixel Art', categoria: 'Arte' },
-    ];
+    const [cursos, setCursos] = useState([]);
+    const [cursosFiltrados, setCursosFiltrados] = useState([]);
+    const [numColunas, setNumColunas] = useState(2);
 
-    const categorias = ['Ciências', 'Tecnologia', 'Arte'];
+    useEffect(() => {
+        const fetchCursos = async () => {
+            try {
+        
+                const cursosData = await CursoService.listarCursos();
+                setCursos(cursosData);
+                setCursosFiltrados(cursosData);
+            } catch (error) {
+                console.error('Erro ao buscar cursos:', error);
+            }
+        };
 
-    const [cursosFiltrados, setCursosFiltrados] = React.useState(cursos);
-    const [numColunas, setNumColunas] = React.useState(2);
+        fetchCursos();
+    }, []);
 
     const handleFiltrar = (categoria) => {
-        if (categoria === null) {
+        if (categoria === 'Todos') {
             setCursosFiltrados(cursos);
         } else {
-            const cursosFiltrados = cursos.filter(curso => curso.categoria === categoria);
+            const cursosFiltrados = cursos.filter((curso) => curso.categoria === categoria);
             setCursosFiltrados(cursosFiltrados);
         }
     };
 
     return (
         <Grid container spacing={3}>
-            <Grid item xs={12} sm={3}>
-                <FiltroCursos categorias={categorias} onFiltrar={handleFiltrar} />
+            <Grid item xs={12} sm={3} className={styles.estilo_item_filtro}>
+                <FiltroCursos categorias={['Todos', 'Tecnologia', 'Negócios', 'Design', 'Produtidade', 'Jogos', 'Linguas']} onFiltrar={handleFiltrar} />
             </Grid>
-            <Grid item xs={12} sm={9}>
+            <Grid item xs={12} sm={9} className={styles.container_vagas}>
                 <Grid container spacing={3}>
                     {cursosFiltrados.map((curso, index) => (
                         <Grid item xs={12} sm={numColunas === 1 ? 12 : 6} key={index}>
-                            <CursoCard
-                                duracao={curso.duracao}
-                                materia={curso.materia}
-                                categoria={curso.categoria}
-                            />
+                            <Card>
+                                <CardContent>
+                                    <Typography variant="h6" component="div">
+                                        Duração: {curso.duracao}
+                                    </Typography>
+                                    <Typography variant="h5" component="div" sx={{ marginTop: 2 }}>
+                                        Matéria: {curso.materia}
+                                    </Typography>
+                                    <Typography variant="body1" color="textSecondary" sx={{ marginTop: 2 }}>
+                                        Categoria: {curso.categoria}
+                                    </Typography>
+                                    <Link href={`/social/cursos/aulas`}>
+                                        <Button  variant="contained" color="primary" sx={{ marginTop: 2 }}>
+                                            Ver Aulas
+                                        </Button>
+                                    </Link>
+                                </CardContent>
+                            </Card>
                         </Grid>
                     ))}
                 </Grid>

@@ -34,12 +34,12 @@
 .botao_form {
     height: 38px;
     font-weight: 600;
-    background: linear-gradient(180deg, #B378FF   85%, #0D0117 90%); /* Cores sólidas sem gradiente */
+    background: linear-gradient(180deg, #B378FF   85%, #0D0117 90%); 
 
 }
 
 .botao_form:hover {
-    background: linear-gradient(180deg, #0D0117 85%, #B378FF 90%); /* Cores sólidas sem gradiente */
+    background: linear-gradient(180deg, #0D0117 85%, #B378FF 90%); 
 }
 
 
@@ -67,3 +67,19 @@
 .titulo_input {
     color: #0D0117;
 }
+
+@media (max-width: 650px) {
+    .container_form {
+        width: 100%;
+    }
+
+    .form_input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .botao_logout {
+      display: block;
+    }
+  }
