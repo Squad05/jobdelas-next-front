@@ -75,3 +75,9 @@
     background-color:#b378ff88;
   }
   
+
+  @media (max-width: 650px) {
+    .side_container {
+        display: none;
+    }
+}

@@ -1,16 +1,11 @@
-.navbarSocialContainer {
-}
-
-.userNavbar, .navBarInferior {
+.userNavbar,
+.navBarInferior {
     padding: 8px 40px;
-
 }
-
-/* USER INFO DIV */
 
 
 .userNavbar {
-    background-color:#0D0117;
+    background-color: #0D0117;
     display: flex;
     justify-content: space-between;
 }
@@ -26,18 +21,17 @@
 }
 
 
-/* NAVSOCIAL LINKS */
 .navBarInferior {
-    background-color:#B378FF;
+    background-color: #B378FF;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: width 0.3s;
 }
 
 .navSocialLinks {
     display: flex;
     gap: 30px;
-
 }
 
 .navSocialLinks .icon {
@@ -51,12 +45,13 @@
     align-items: center;
 }
 
+
 .searchBar {
     display: flex;
     align-items: center;
 }
 
-.searchBar input  {
+.searchBar input {
     height: 30px;
     border-radius: 10px;
     padding: 3px;
@@ -68,5 +63,19 @@
     font-size: 30px;
     color: white;
     text-shadow: 2px 2px 4px #0d01170e;
+}
 
+
+@media (max-width: 650px) {
+
+    .searchBar,
+    .searchBar .searchIcon {
+        display: none;
+    }
+
+
+
+    .navSocialLinks {
+        gap: 10px;
+    }
 }
