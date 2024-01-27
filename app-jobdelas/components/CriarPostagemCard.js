@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Divider,
-  Box,
-  TextField,
-  Button,
-  Avatar,
-} from "@mui/material";
+import { Card, CardContent, TextField, Button } from "@mui/material";
 import PostagensService from "@/services/PostagensService";
 import UserService from "@/services/UserService";
+import EmojiPicker from "./EmojiPicker";
 import styles from "../styles/CriarPostagemCard.module.css";
 
 const CriarPostagemCard = ({ onPostagemCriada }) => {
@@ -58,34 +50,28 @@ const CriarPostagemCard = ({ onPostagemCriada }) => {
     }
   };
 
+  const handleSelectEmoji = (emoji) => {
+    setConteudo(conteudo + emoji);
+  };
+
   return (
     <Card className={styles.estilo_card}>
       <CardContent className={styles.conteudo_card}>
-        <Box className={styles.cardHeader}>
-          <Avatar alt="Foto do Usuário" src={fotoUsuario}>
-            {!fotoUsuario && "U"}
-          </Avatar>
-          <Typography variant="h5">
-            O que você está pensando, {nomeUsuario}?
-          </Typography>
-        </Box>
-
         <TextField
           label="Compartilhe seus pensamentos"
           multiline
-          rows={4}
+          rows={2}
           fullWidth
           variant="outlined"
           InputProps={{ classes: { notchedOutline: styles.noBorder } }}
           value={conteudo}
           onChange={(e) => setConteudo(e.target.value)}
         />
+        <EmojiPicker onSelectEmoji={handleSelectEmoji} />
         <Button className={styles.estilo_botao} onClick={handleCriarPostagem}>
           Postar
         </Button>
       </CardContent>
-      <Divider />
-      <Box sx={{ flexGrow: 1 }} />
     </Card>
   );
 };

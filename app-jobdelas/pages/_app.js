@@ -1,5 +1,5 @@
-import '@/styles/globals.css'
-import { PagesProgressBar as ProgressBar } from 'next-nprogress-bar';
+import "@/styles/globals.css";
+import { PagesProgressBar as ProgressBar } from "next-nprogress-bar";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -14,5 +14,5 @@ export default function App({ Component, pageProps }) {
         shallowRouting
       />
     </>
-  )
+  );
 }
