@@ -50,7 +50,7 @@ const ListaVagas = () => {
         />
       </Grid>
       <Grid item xs={12} sm={9} className={styles.container_vagas}>
-        <Grid sx={{margin: 'auto'}} container spacing={3}>
+        <Grid sx={{ margin: 'auto' }} container spacing={3}>
           {vagasFiltradas.map((vaga, index) => (
             <Grid item xs={12} sm={numColunas === 1 ? 12 : 6} key={index}>
               <Card

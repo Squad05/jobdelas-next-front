@@ -1,46 +1,54 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import { Grid } from '@mui/material';
+import styles from '../styles/CardCurso.module.css';
+import FilterListIcon from "@mui/icons-material/FilterList";
 
-const FiltroCursos = ({ onFiltrar }) => {
-    const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
-
-    const categorias = [
-        'Tecnologia',
-        'Negócios',
-        'Design',
-        'Marketing',
-        'Produtividade',
-        'Jogos',
-        'Linguas'
-    ];
-
-    const handleClick = (categoria) => {
-        setCategoriaSelecionada(categoria);
-        onFiltrar(categoria);
+const FiltroCursos = ({ categorias, onFiltrar }) => {
+   
+    const getCorCategoria = (categoria) => {
+        const cores = {
+            'Todos': '#B378FF',
+            'Tecnologia': '#78ff95',
+            'Negócios': '#ff7878',
+            'Design': '#FF6347',
+            'Marketing': '#ffd700',
+            'Produtividade': '#FFD700',
+            'Jogos': '#ffa07a',
+            'Linguas': '#ff69b4'
+        };
+        return cores[categoria] || '';
     };
 
+ 
+
     return (
-        <Grid sx={{ marginLeft: 4 }} container spacing={2} direction="column">
-            <Grid item>
+        <div className={styles.filtro}>
+
+            <h2 className={styles.titulo_filtro}>
+                <FilterListIcon style={{ marginRight: "8px" }} />
+                Filtrar Cursos
+            </h2>
+            {categorias.map((categoria, index) => (
                 <Button
-                    variant={categoriaSelecionada === null ? 'contained' : 'outlined'}
-                    onClick={() => handleClick(null)}
+                    key={index}
+                    onClick={() => onFiltrar(categoria)}
+                    className={`${styles.botaoFiltro} ${styles[getCorCategoria(categoria)]}`}
+                    style={{
+                        backgroundColor: getCorCategoria(categoria),
+                        color: getCorCategoria === categoria ? '#fff' : ''
+                    }}
                 >
-                    Todos
+                    {categoria}
                 </Button>
-            </Grid>
-            {categorias.map((categoria) => (
-                <Grid item key={categoria}>
-                    <Button
-                        variant={categoriaSelecionada === categoria ? 'contained' : 'outlined'}
-                        onClick={() => handleClick(categoria)}
-                    >
-                        {categoria}
-                    </Button>
-                </Grid>
+
             ))}
-        </Grid>
+            <img
+                src="/imagens/img_page_vaga.svg"
+                alt="Logo Job delas"
+                className={styles.img_filtro}
+            ></img>
+
+        </div>
     );
 };
 

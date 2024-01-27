@@ -1,12 +1,16 @@
-.estilo_card {
-    border-radius: 0px;
+.container_cursos {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 25px !important;
     padding: 0 !important;
-    border: 1px solid #0d01170a ;
-
 }
 
 .card_body {
     padding: 0 !important;
+}
+
+.texto_card {
+    padding: 5px;
 }
 
 .card_body .titulo {
@@ -20,9 +24,6 @@
     margin: 0;
 }
 
-.texto_card {
-    padding: 5px;
-}
 
 .botao_card {
     background-color: #B378FF !important;
@@ -32,7 +33,19 @@
     height: 35px;
     margin: 10px !important;
     gap:5px;
+}
 
+
+.container_botao {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.estilo_card {
+    border-radius: 0px;
+    padding: 0 !important;
+    border: 1px solid #0d01170a ;
 
 }
 
