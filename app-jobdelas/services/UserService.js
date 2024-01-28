@@ -19,9 +19,6 @@ class UserService {
 
       const email = response.data.email;
 
-      console.log("O email é " + email);
-      console.log(response);
-
       const candidaturasVagas = await axios.get(
         `https://jbcompanyapi.onrender.com/candidaturas/contar/${email}`
       );
@@ -29,10 +26,16 @@ class UserService {
         `https://jbcompanyapi.onrender.com/candidaturas-cursos/contar/${email}`
       );
 
+      const postagensUsuario = await axios.get(
+        "https://jobdelas-khy0.onrender.com/postagem/contarPostagensPorUsuario",
+        { headers }
+      );
+
       const userDetails = {
         ...response.data,
         quantidadeVagas: candidaturasVagas.data,
         quantidadeCurso: candidaturasCursos.data,
+        quantidadePostagens: postagensUsuario.data,
       };
 
       return userDetails;

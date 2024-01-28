@@ -26,13 +26,13 @@ export const SidePerfil = () => {
   const atualizarValores = async () => {
     try {
       const detalhesUsuario = await UserService.detalhesUsuaria();
-
+      console.log(detalhesUsuario);
       setValues({
         ...values,
         nome: detalhesUsuario.nome,
         vagasAplicadas: detalhesUsuario.quantidadeVagas,
-        oportunidades: detalhesUsuario.quantidadeCursos,
-        postagensFeitas: "detalhesUsuario.postagensFeitas",
+        oportunidades: detalhesUsuario.quantidadeCurso,
+        postagensFeitas: detalhesUsuario.quantidadePostagens,
         foto: detalhesUsuario.foto,
       });
     } catch (error) {

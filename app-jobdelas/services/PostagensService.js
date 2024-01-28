@@ -1,7 +1,6 @@
 import axios from "axios";
 
 class PostagemService {
-
   async cadastrarPostagens(postagem, token) {
     try {
       const headers = {
@@ -23,12 +22,12 @@ class PostagemService {
 
   async listarTodasPostagens(token) {
     try {
-     
       const headers = {
         Authorization: `Bearer ${token}`,
       };
       const response = await axios.get(
-        "https://jobdelas-khy0.onrender.com/postagem", { headers}
+        "https://jobdelas-khy0.onrender.com/postagem",
+        { headers }
       );
       return response.data;
     } catch (error) {
@@ -36,7 +35,6 @@ class PostagemService {
       throw error;
     }
   }
-
 }
 
 export default new PostagemService();
