@@ -1,16 +1,22 @@
-![logo](https://github.com/Squad05/jobdelas-next-front/assets/129866444/5394afda-461d-4a20-9ecf-7a670378d444)
+<div align="center">
+ <a href="https://github.com/Squad05/JbCompany-Api-SpringBoot">
+    <img src="https://github.com/Squad05/jobdelas-next-front/assets/129866444/5394afda-461d-4a20-9ecf-7a670378d444" alt="logo-jbcompany" width="150" >
+  </a>
+</p>
+</div>
 
 > Status: Concluído
 
-### Esta é uma aplicação web de um projeto frontend em React/Next. 
+### Esta é uma aplicação frontend React/Next. 
 
 ## O que é o projeto?
 
-O JobDelas é uma rede social que visa oferecer oportunidades iguais e representatividade no mercado de trabalho para mulheres LGBTQA+.
+O JobDelas é uma rede social que visa oferecer oportunidades iguais e representatividade no mercado de trabalho para garotas interessadas. Nosso objetivo é oferecer oportunidades e promover o desenvolvimento profissional para mulheres.
+JobDelas é um projeto educacional realizado para a RECODE PRO.
 
 ## Descrição do projeto:
 
-O projeto tem como objetivo ser um elo de ligação entre as mulheres LGBT que estão querendo ingressar no mercado de trbalho com empresas que oferecem vagas específicas para este público. Com isso podemos contribuir com:
+O JobDelas funciona como uma aplicação frontend react/next. e tem como objetivo ser um elo de ligação entre as mulheres que estão querendo ingressar no mercado de trbalho com as empresas que oferecem vagas específicas para este público. Contribuindo com:
 + aumento da oportunidade de trabalho;
 + criação de um ambiente colaborativo;
 + networking;
@@ -20,8 +26,22 @@ O projeto tem como objetivo ser um elo de ligação entre as mulheres LGBT que e
 
 ## Como baixar e iniciar?
 
-Para acessar a rede social JobDelas basta que você baixe o app na celular ou desktop, fazer seu cadastro de login e iniciar sua navegação incerindo sua oportunidade de trabalho para que as mulheres LGBT possam acessar.
+### 1ª Opção - Deploy do Front Consumindo esta API:
+1. Acesse: [JbCompany Frontend](https://jbcompany.vercel.app/)
+2. Repositório do Frontend: [JbCompany Frontend Repo](https://github.com/Squad05/jbcompany-next-front)
 
+### 2ª Opção - Deploy da API:
+1. Abra o arquivo do Insomnia.
+2. Teste as rotas.
+
+### 3ª Opção - Quer Baixar o Repositório?
+1. Faça o download do repositório.
+    ```bash
+    git clone [https://github.com/Squad05/JbCompany-Api-SpringBoot.git](https://github.com/Squad05/jobdelas-next-front.git)
+    cd JbCompany-Api-SpringBoot
+    ```
+2. Inicie a aplicação.
+3. Abra o arquivo do Insomnia e teste.
 
 ## Como Contribuir:
 
@@ -38,12 +58,40 @@ Se você gostaria de contribuir para este projeto, sinta-se à vontade para abri
 
 
 ---
-## Equipe de desenvolvimento 
+## Equipe de desenvolvedores:
 
-[Guilherme B. de Oliveira](https://github.com/guidev1989) 
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="20%">
+        <a href="https://github.com/MeDourado">
+          <img src="https://avatars.githubusercontent.com/u/99136551?v=4" width="100px;" alt="Eduarda's Photo">
+          <br />
+          <sub><b>Maria Dourado</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="20%">
+        <a href="https://github.com/1Jeferson">
+          <img src="https://avatars.githubusercontent.com/u/120865777?v=4" width="100px;" alt="Jeferson's Photo">
+          <br />
+          <sub><b>Jeferson Ribeiro</b></sub>
+        </a>
+      </td>
+            <td align="center" valign="top" width="20%">
+            <a href="https://github.com/Grasielly84">
+          <img src="https://avatars.githubusercontent.com/u/129866444?v=4" width="100px;" alt="Grasielly's Photo">
+          <br />
+          <sub><b>Grasielly Dias </b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="20%">
+        <a href="https://github.com/guidev1989">
+          <img src="URL_DA_IMAGEM_DO_GUILHERME" width="100px;" alt="Guilherme's Photo">
+          <br />
+          <sub><b>Guilherme</b></sub>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-[Grasielly Dias Apolinário](https://github.com/Grasielly84)
-
-[Jeferson Ribeiro da Silva](https://github.com/1Jeferson) 
-
-[Maria Eduarda Santos Dourado](https://github.com/MeDourado) 
