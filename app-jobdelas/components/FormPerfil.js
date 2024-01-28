@@ -63,14 +63,28 @@ export const ConfiguracaoUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      await UserService.editarUsuaria(token, values);
 
-      router.push("/social/feed");
+    if (!values.senha) {
+      delete values.senha;
+      delete values.confirmarSenha;
+    } else {
+
+      if (values.senha !== values.confirmarSenha) {
+        console.error("As senhas não coincidem");
+        return;
+      }
+    }
+
+    try {
+      await UserService.editarUsuario(token, values);
+
+      router.push("/dashboard/home");
     } catch (error) {
-      console.error("Erro ao atualizar usuária:", error);
+      console.error("Erro ao atualizar usuário:", error);
     }
   };
+
+
   const handleLogout = () => {
     LogoutService.logout();
     router.push("/");
@@ -95,7 +109,7 @@ export const ConfiguracaoUser = () => {
               <Stack spacing={2}>
                 <InputLabel
                   className={styles.titulo_input}
-                  htmlFor="primeiroNome"
+                  htmlFor="nome"
                 >
                   Nome Completo
                 </InputLabel>
