@@ -1,60 +1,34 @@
 <div align="center">
  <a href="https://github.com/Squad05/JbCompany-Api-SpringBoot">
-    <img src="https://github.com/Squad05/jobdelas-next-front/assets/129866444/5394afda-461d-4a20-9ecf-7a670378d444" alt="logo-jbcompany" width="150" >
+    <img src="https://github.com/Squad05/jobdelas-next-front/assets/129866444/5394afda-461d-4a20-9ecf-7a670378d444" alt="logo-jbcompany" width="170" >
   </a>
 </p>
 </div>
 
-> Status: Concluído
-
-### Esta é uma aplicação frontend React/Next. 
+> Status: Em revisão
 
 ## O que é o projeto?
-
-O JobDelas é uma rede social que visa oferecer oportunidades iguais e representatividade no mercado de trabalho para garotas interessadas. Nosso objetivo é oferecer oportunidades e promover o desenvolvimento profissional para mulheres.
-JobDelas é um projeto educacional realizado para a RECODE PRO.
-
-## Descrição do projeto:
-
-O JobDelas funciona como uma aplicação frontend react/next. e tem como objetivo ser um elo de ligação entre as mulheres que estão querendo ingressar no mercado de trbalho com as empresas que oferecem vagas específicas para este público. Contribuindo com:
-+ aumento da oportunidade de trabalho;
-+ criação de um ambiente colaborativo;
-+ networking;
-+ comunicação acertiva;
-+ indicações de cursos para o aprimoramento profissional.
+Este é um projeto de aplicação frontend React/Next criado com o propósito exclusivo de estudo e construção de um portfólio.
+O jobdelas (projeto ficticio) visa promover oportunidades e representatividade no mercado de trabalho para mulheres. 
+Inclui funcionalidades como criar postagens, gerenciar tarefas, assistir cursos, candidatar a cursos. 
 
 
-## Como baixar e iniciar?
+## Como iniciar?
 
-### 1ª Opção - Deploy do Front Consumindo esta API:
-1. Acesse: [JbCompany Frontend](https://jbcompany.vercel.app/)
-2. Repositório do Frontend: [JbCompany Frontend Repo](https://github.com/Squad05/jbcompany-next-front)
-
-### 2ª Opção - Deploy da API:
-1. Abra o arquivo do Insomnia.
-2. Teste as rotas.
-
-### 3ª Opção - Quer Baixar o Repositório?
-1. Faça o download do repositório.
-    ```bash
-    git clone [https://github.com/Squad05/JbCompany-Api-SpringBoot.git](https://github.com/Squad05/jobdelas-next-front.git)
-    cd JbCompany-Api-SpringBoot
-    ```
-2. Inicie a aplicação.
-3. Abra o arquivo do Insomnia e teste.
+### Deploy:
+1. Acesse: [JbCompany Frontend](https://jobdelas.vercel.app/auth/cadastrar)
+Obs: Repositório do Back-end feito em Spring Boot: [Jobdelas Api](https://github.com/Squad05/jobdelas-api)
 
 ## Como Contribuir:
-
 Se você gostaria de contribuir para este projeto, sinta-se à vontade para abrir um "fork" ou enviar um "pull request".
 
-
 ### Tecnologias Utilizadas
+![React](https://img.shields.io/badge/React-000?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=next.js&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML-000?style=for-the-badge&logo=html5&logoColor=30A3DC)
 ![CSS3](https://img.shields.io/badge/CSS3-000?style=for-the-badge&logo=css3&logoColor=E94D5F)
 ![JavaScript](https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript&logoColor=30A3DC)
-[![Git](https://img.shields.io/badge/Git-000?style=for-the-badge&logo=git&logoColor=E94D5F)](https://git-scm.com/doc) 
-[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=30A3DC)](https://docs.github.com/)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+
 
 
 ---
@@ -82,13 +56,6 @@ Se você gostaria de contribuir para este projeto, sinta-se à vontade para abri
           <img src="https://avatars.githubusercontent.com/u/129866444?v=4" width="100px;" alt="Grasielly's Photo">
           <br />
           <sub><b>Grasielly Dias </b></sub>
-        </a>
-      </td>
-      <td align="center" valign="top" width="20%">
-        <a href="https://github.com/guidev1989">
-          <img src="URL_DA_IMAGEM_DO_GUILHERME" width="100px;" alt="Guilherme's Photo">
-          <br />
-          <sub><b>Guilherme</b></sub>
         </a>
       </td>
     </tr>
