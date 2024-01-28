@@ -86,26 +86,24 @@
         flex-direction: row;
         align-items: center;
         width: 100%;
-        position: sticky;
         top: 0;
         z-index: 1;
-        justify-content: space-evenly;
     }
 
     .filtro .titulo_filtro {
         height: auto;
         width: auto;
         text-align: center;
-        margin: 0 10px; /* Adiciona margem entre os itens do filtro */
+        margin: 0 10px; 
     }
 
     .filtro .botaoFiltro {
         width: auto;
-        margin: 0 10px; /* Adiciona margem entre os itens do filtro */
+        margin: 0 10px; 
     }
 
     .container_vagas {
-        margin-top: 75px !important; /* Ajusta a margem do conteúdo principal */
+        margin-top: 75px !important; 
     }
 }
 

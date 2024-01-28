@@ -24,7 +24,7 @@ const FiltroCursos = ({ categorias, onFiltrar }) => {
     return (
         <div className={styles.filtro}>
 
-            <h2 className={styles.titulo_filtro}>
+            <h2 className={`${styles.titulo_filtro} ${styles.titulo_filtro_visible}`}>
                 <FilterListIcon style={{ marginRight: "8px" }} />
                 Filtrar Cursos
             </h2>
@@ -45,7 +45,7 @@ const FiltroCursos = ({ categorias, onFiltrar }) => {
             <img
                 src="/imagens/img_page_vaga.svg"
                 alt="Logo Job delas"
-                className={styles.img_filtro}
+                className={`${styles.img_filtro} ${styles.img_filtro_visible}`}
             ></img>
 
         </div>

@@ -25,3 +25,17 @@
         width: 100%; 
     }
 }
+
+@media (min-width: 661px) and (max-width: 1087px) {
+    .container_page {
+        justify-content: flex-end; 
+    }
+
+    .lateral {
+        width: 30%; 
+    }
+
+    .feed {
+        width: 70%;
+    }
+}

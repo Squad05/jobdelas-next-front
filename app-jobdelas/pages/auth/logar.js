@@ -6,9 +6,9 @@ import InfoSecaoAuth from "@/components/InfoSecaoAuth";
 import Loading from "@/components/Loading";
 
 export default function Logar() {
+
   return (
     <>
-      <Loading />
 
       <Head>
         <title>Jobdelas - Login </title>

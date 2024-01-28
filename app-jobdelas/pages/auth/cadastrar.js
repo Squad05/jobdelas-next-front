@@ -8,10 +8,10 @@ import Loading from "@/components/Loading";
 export default function Cadastro() {
   return (
     <>
-      <Loading />
       <Head>
         <title>Jobdelas - Cadastro </title>
       </Head>
+     
       <main className={styles.estilo_body}>
         <NavbarAuth />
         <div className={styles.container_principal}>
@@ -19,7 +19,7 @@ export default function Cadastro() {
           <CadastroForm />
         </div>
       </main>
-      <Loading />
+     
     </>
   );
 }

@@ -15,7 +15,7 @@
 
 .card_body .titulo {
     color: white;
-    background: linear-gradient(90deg,  #0D0117 95%, #B378FF 5%);
+    background: linear-gradient(90deg, #0D0117 95%, #B378FF 5%);
     text-align: center;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@
     width: 100px;
     height: 35px;
     margin: 10px !important;
-    gap:5px;
+    gap: 5px;
 }
 
 
@@ -45,7 +45,7 @@
 .estilo_card {
     border-radius: 0px;
     padding: 0 !important;
-    border: 1px solid #0d01170a ;
+    border: 1px solid #0d01170a;
 
 }
 
@@ -89,30 +89,49 @@
 
 @media (max-width: 650px) {
     .filtro {
-        width: 100%; 
-        margin: 0 auto; 
+        width: 100%;
+        margin: 0 auto;
     }
 }
 
-@media (max-width: 1050px) {
+
+@media (max-width: 955px) {
     .filtro {
-        width: 200px; 
-        margin-top: 25px;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+        flex-wrap: wrap;
+    }
+
+    .filtro .titulo_filtro {
+        height: auto;
+        width: auto;
+        text-align: center;
+        margin: 0 10px;
+    }
+
+    .filtro .botaoFiltro {
+        width: auto;
+        margin: 0 10px;
+    }
+
+    .container_cursos {
+        margin-top: 75px !important;
     }
 }
-@media (max-width: 947px) {
-    .filtro {
-        width: 150px;
-        margin: 25px; 
+
+.titulo_filtro_visible {
+    @media (max-width: 955px) {
+      display: none;
     }
-}
-@media (max-width: 775px) {
-    .filtro {
-       display: none;
+  }
+
+  .img_filtro_visible {
+    @media (max-width: 955px) {
+      display: none;
     }
-}
-@media (max-width: 580px) {
-    .filtro {
-       display: flex;
-    }
-}
+  }
+
+  
