@@ -42,33 +42,6 @@ class UserService {
       throw error;
     }
   }
-
-  async editarFotoUsuaria(foto) {
-    const token = localStorage.getItem("token");
-
-    console.log(token);
-    try {
-      const formData = new FormData();
-      formData.append("foto", foto);
-
-      const headers = {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
-      };
-
-      const response = await axios.patch(
-        "https://jobdelas-khy0.onrender.com/auth/editar-foto",
-        formData,
-        { headers }
-      );
-
-      console.log(response);
-      return response.data;
-    } catch (error) {
-      console.error("Erro ao editar a foto do Usuário", error);
-      throw error;
-    }
-  }
 }
 
 export default new UserService();
