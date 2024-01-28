@@ -4,8 +4,9 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-
+import styles from "../styles/ListaAulas.module.css";
 import { useRouter } from "next/router";
+import { PlayArrow } from "@mui/icons-material";
 
 const ListaAulas = () => {
   const router = useRouter();
@@ -56,9 +57,12 @@ const ListaAulas = () => {
       <ul>
         {aulas.map((aula, index) => (
           <li key={index}>
-            <Button onClick={() => handleAulaClick(aula.titulo)}>
-              {aula.titulo}
-            </Button>
+            <Box  className={styles.lista_aula} >
+              <Typography className={styles.titulo}>{aula.titulo}</Typography>
+              <Button className={styles.assistir} onClick={() => handleAulaClick(aula.titulo)}>
+                <PlayArrow /> Assistir
+              </Button>
+            </Box>
           </li>
         ))}
       </ul>
@@ -70,7 +74,7 @@ const ListaAulas = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 600, // Ajuste o tamanho conforme necessário
+            width: 600,
             bgcolor: "background.paper",
             boxShadow: 24,
             p: 4,
@@ -78,17 +82,17 @@ const ListaAulas = () => {
         >
           {aulaDetalhes && (
             <div>
-              <Typography variant="h6">{aulaSelecionada}</Typography>
+              <Typography className={styles.aula} variant="h6">{aulaSelecionada}</Typography>
               {/* Incorporando o vídeo diretamente no modal */}
               <iframe
                 width="100%"
-                height="315" // Ajuste a altura conforme necessário
+                height="315"
                 src={aulaDetalhes.link}
                 title={aulaDetalhes.titulo}
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
-              <p>Descrição: {aulaDetalhes.descricao}</p>
+              <p className={styles.descricao}>Descrição: {aulaDetalhes.descricao}</p>
             </div>
           )}
         </Box>

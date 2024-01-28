@@ -6,7 +6,7 @@ import CursoService from "@/services/CursoService";
 import styles from "../styles/CursoInfo.module.css";
 import SchoolIcon from "@mui/icons-material/School";
 
-import { useRouter } from "next/router"; // Importe o useRouter do Next.js
+import { useRouter } from "next/router"; 
 
 const CursoInfo = () => {
   const router = useRouter();
