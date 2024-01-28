@@ -22,9 +22,6 @@ O projeto tem como objetivo ser um elo de ligação entre as mulheres LGBT que e
 
 Para acessar a rede social JobDelas basta que você baixe o app na celular ou desktop, fazer seu cadastro de login e iniciar sua navegação incerindo sua oportunidade de trabalho para que as mulheres LGBT possam acessar.
 
-## Funcionalidades:
-
-?
 
 ## Como Contribuir:
 
