@@ -17,7 +17,19 @@ class UserService {
         { headers }
       );
 
-      return response.data;
+      const email = response.data.email;
+
+      const candidaturas = await axios.get(
+        `https://jbcompanyapi.onrender.com/candidaturas/contar/${email}`
+      );
+
+      const userDetails = { ...response.data, candidaturas: candidaturas.data };
+
+      console.log(candidaturas);
+
+      console.log(userDetails);
+
+      return userDetails;
     } catch (error) {
       console.error("Erro ao buscar detalhes do Usuário", error);
       throw error;
