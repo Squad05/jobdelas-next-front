@@ -54,9 +54,10 @@ const ListaVagas = () => {
       const candidatura = {
         candidataEmail: detalhesUsuaria.email,
         candidataNome: detalhesUsuaria.nome,
-        vaga: vaga,
+        vagas: vaga,
       };
 
+      console.log(vaga);
       await CandidaturaService.cadastrarCandidaturaVaga(candidatura);
 
       setMensagemModal(
