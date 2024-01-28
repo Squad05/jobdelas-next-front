@@ -5,6 +5,7 @@ import styles from "../../../styles/Vagas.module.css";
 
 import CursoInfo from "@/components/CursoInfo";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
+import ListaAulas from "@/components/ListaAulas";
 
 export default function Aulas() {
   const { autenticado } = useAuth();
@@ -21,6 +22,7 @@ export default function Aulas() {
         <NavbarSocial />
         <div className={styles.container_conteudo}>
           <CursoInfo />
+          <ListaAulas />
         </div>
       </main>
     </AuthenticatedRoute>

@@ -22,7 +22,7 @@
 
 
 .navBarInferior {
-    background-color: #B378FF;
+    background: linear-gradient(180deg, #B378FF  2% , #d478ff  98%) ;
     display: flex;
     justify-content: space-between;
     align-items: center;
