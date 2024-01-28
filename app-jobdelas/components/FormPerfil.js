@@ -12,7 +12,6 @@ import { AccountCircle, Update } from "@mui/icons-material";
 import UserService from "@/services/UserService";
 import styles from "../styles/FormPerfil.module.css";
 import { useRouter } from "next/router";
-import LogoutService from "@/services/auth/LogoutService";
 
 export const ConfiguracaoUser = () => {
   const [values, setValues] = useState({
@@ -76,20 +75,13 @@ export const ConfiguracaoUser = () => {
     }
 
     try {
-      await UserService.editarUsuario(token, values);
+      await UserService.editarUsuaria(token, values);
 
-      router.push("/dashboard/home");
+      router.push("/social/feed");
     } catch (error) {
       console.error("Erro ao atualizar usuário:", error);
     }
   };
-
-
-  const handleLogout = () => {
-    LogoutService.logout();
-    router.push("/");
-  };
-
 
   return (
     <div className={styles.container_form}>
@@ -195,16 +187,6 @@ export const ConfiguracaoUser = () => {
         </CardContent>
 
         <CardActions sx={{ justifyContent: "flex-end", marginLeft: 1 }}>
-
-          <Button
-            onClick={handleLogout}
-            className={`${styles.botao_form} ${styles.botao_logout}`}
-            variant="contained"
-            type="button"
-            sx={{ display: { xs: "block", sm: "none" } }}
-          >
-            Logout
-          </Button>
           <Button
             className={styles.botao_form}
             variant="contained"
