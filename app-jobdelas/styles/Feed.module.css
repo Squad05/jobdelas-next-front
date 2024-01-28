@@ -14,3 +14,14 @@
 .feed {
     width: 60%;
 }
+
+@media (max-width: 660px) {
+    .container_page {
+        flex-direction: column; 
+    }
+
+    .lateral,
+    .feed {
+        width: 100%; 
+    }
+}

@@ -152,3 +152,8 @@
   gap: 10px;
 }
 
+@media (max-width: 660px) {
+  .sideTarefas {
+    display: none; 
+  }
+}
