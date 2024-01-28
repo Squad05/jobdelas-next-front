@@ -42,14 +42,13 @@ const ListaPostagemCard = () => {
   };
 
   const handleCurtir = (index) => {
-    // Lógica para tratar a ação de curtir
-    // Pode ser um aumento no contador de curtidas ou uma chamada à API, dependendo da sua lógica de backend
+  
   };
 
   return (
     <Container className={styles.container_lista}>
       <Grid container spacing={2}>
-        {postagens.map((postagem, index) => (
+      {postagens.slice().reverse().map((postagem, index) => (
           <Grid item xs={12} key={index}>
             <Card className={styles.card}>
               <CardContent className={styles.content}>

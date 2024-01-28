@@ -1,16 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Typography, Button, Divider } from "@mui/material";
 import styles from "../styles/SidePerfil.module.css";
 import { CheckCircle, Lightbulb, Message } from "@mui/icons-material";
+import UserService from "@/services/UserService";
 
 export const SidePerfil = () => {
-  const [values, setValues] = useState({
-    primeiroNome: "João",
-    segundoNome: "Silva",
-    vagasAplicadas: 5,
-    oportunidades: 10,
-    postagensFeitas: 10,
-  });
+  const [values, setValues] = useState("");
+  const [nomeUsuario, setNomeUsuario] = useState("");
+  const [fotoUsuario, setFotoUsuario] = useState(null);
+
+  useEffect(() => {
+    const fetchUsuario = async () => {
+      try {
+        const userToken = localStorage.getItem("token");
+        const detalhesUsuario = await UserService.detalhesUsuaria(userToken);
+        setNomeUsuario(detalhesUsuario.nome);
+
+        if (detalhesUsuario.foto == null) {
+          setFotoUsuario("oi.png");
+        } else {
+          setFotoUsuario(detalhesUsuario.foto);
+        }
+      } catch (error) {
+        console.error("Erro ao obter detalhes do usuário:", error);
+      }
+    };
+
+    fetchUsuario();
+  }, []);
 
   return (
     <div className={styles.side_container}>
@@ -18,11 +35,11 @@ export const SidePerfil = () => {
         <div className={styles.header_box}>
           <Typography className={styles.titulo_header}>
             {" "}
-            {values.primeiroNome} {values.segundoNome}
+            {nomeUsuario}
           </Typography>
         </div>
         <img
-          src="https://th.bing.com/th/id/OIP.mz1gErwlzvhlkWyDgr1tqQAAAA?w=248&h=217&c=7&r=0&o=5&pid=1.7"
+          src={fotoUsuario}
           alt="Foto de Perfil"
           className={styles.foto_perfil}
         />
