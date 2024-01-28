@@ -59,6 +59,10 @@
     box-shadow: 2px 2px 4px #0d01170e;
 }
 
+.searchBar input:focus {
+   outline: none;
+}
+
 .searchBar .searchIcon {
     font-size: 30px;
     color: white;

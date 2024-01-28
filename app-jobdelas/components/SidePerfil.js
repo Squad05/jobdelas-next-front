@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import { Box, Typography, Button, Divider } from "@mui/material";
 import styles from "../styles/SidePerfil.module.css";
 import { CheckCircle, Lightbulb, Message } from "@mui/icons-material";
-import LogoutService from "@/services/auth/LogoutService";
-import { useRouter } from "next/router";
 
 export const SidePerfil = () => {
-
-  const router = useRouter();
-
   const [values, setValues] = useState({
     primeiroNome: "João",
     segundoNome: "Silva",
@@ -16,12 +11,6 @@ export const SidePerfil = () => {
     oportunidades: 10,
     postagensFeitas: 10,
   });
-
-  const handleLogout = () => {
-    LogoutService.logout();
-    router.push("/");
-  };
-
 
   return (
     <div className={styles.side_container}>
@@ -62,13 +51,6 @@ export const SidePerfil = () => {
             </Typography>
           </div>
           <Divider className={styles.customDivider} />
-        </div>
-
-        <div className={styles.footer_box}>
-          <Button className={styles.botao_perfil}>Perfil</Button>
-        </div>
-        <div className={styles.footer_box}>
-          <Button onClick={handleLogout} sx={{ marginTop: 2 }} className={styles.botao_perfil}>Logout</Button>
         </div>
       </Box>
     </div>

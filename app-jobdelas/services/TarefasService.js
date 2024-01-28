@@ -13,9 +13,8 @@ class TarefasService {
         { headers }
       );
 
-      console.log("Tarefa dados");
+      console.log("Tarefa cadastrada com sucesso");
 
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.error("Erro ao postar nova vaga:", error);

@@ -3,17 +3,18 @@ import Avatar from "@mui/material/Avatar";
 import ChatIcon from "@mui/icons-material/Chat";
 import BookIcon from "@mui/icons-material/Book";
 import WorkIcon from "@mui/icons-material/Work";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import styles from "../styles/NavbarSocial.module.css";
 import Link from "next/link";
 import Logo from "./Logo";
 import { Box, Typography } from "@mui/material";
 import { Search, AccountCircle, HomeWork } from "@mui/icons-material";
 import UserService from "@/services/UserService";
+import LogoutService from "@/services/auth/LogoutService";
 
-export default function NavbarSocial() {
+const NavbarSocial = () => {
   const [nomeUsuario, setNomeUsuario] = useState("");
   const [fotoUsuario, setFotoUsuario] = useState(null);
-
 
   useEffect(() => {
     const fetchUsuario = async () => {
@@ -35,7 +36,6 @@ export default function NavbarSocial() {
     fetchUsuario();
   }, []);
 
-
   return (
     <div className={styles.navbarSocialContainer}>
       <div className={styles.userNavbar}>
@@ -48,7 +48,9 @@ export default function NavbarSocial() {
             alt="Foto do usuário"
             src={fotoUsuario}
             className={styles.userPhoto}
-          >{nomeUsuario.slice(0, 2).toUpperCase()}</Avatar>
+          >
+            {nomeUsuario.slice(0, 2).toUpperCase()}
+          </Avatar>
         </div>
       </div>
 
@@ -71,7 +73,12 @@ export default function NavbarSocial() {
             <AccountCircle className={styles.icon} />
             <Typography>Perfil</Typography>
           </Link>
+          <Link href="/auth/logar" className={styles.estilo_link}>
+            <ExitToAppIcon className={styles.icon} />
+            <Typography onClick={LogoutService.logout}>Sair</Typography>
+          </Link>
         </div>
+
         <div className={styles.searchBar}>
           <input type="text" placeholder="Pesquisar..." />
           <Search className={styles.searchIcon} />
@@ -79,4 +86,6 @@ export default function NavbarSocial() {
       </div>
     </div>
   );
-}
+};
+
+export default NavbarSocial;
