@@ -6,6 +6,9 @@ import NavbarSocial from "@/components/NavbarSocial";
 import CriarPostagemCard from "@/components/CriarPostagemCard";
 import ListaPostagemCard from "@/components/ListaPostagemCard";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
+import { SidePerfil } from "@/components/SidePerfil";
+import SidePostagem from "@/components/SidePostagem";
+import SideTarefas from "@/components/SideTarefas";
 
 export default function Perfil() {
   return (
@@ -14,12 +17,20 @@ export default function Perfil() {
         <Head>
           <title>Jobdelas</title>
         </Head>
-        <main className={styles.feedBody}>
+        <main className={styles.mainprincipal}>
           <NavbarSocial />
-          <Box display="flex" justifyContent="center">
-            <CriarPostagemCard />
-          </Box>
-          <ListaPostagemCard />
+          <div className={styles.container_page}>
+            <div className={styles.lateral}>
+              <SideTarefas />
+            </div>
+            <div className={styles.feed}>
+              <CriarPostagemCard />
+              <ListaPostagemCard />
+            </div>
+            <div className={styles.lateral}>
+              <SidePostagem />
+            </div>
+          </div>
         </main>
       </>
     </AuthenticatedRoute>

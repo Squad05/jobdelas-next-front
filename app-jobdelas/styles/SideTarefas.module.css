@@ -1,0 +1,154 @@
+.lateral_home {
+  width: 100%;
+  margin: 0;
+
+  
+}
+
+.sideTarefas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sideHeader {
+  width: 100%;
+  background: linear-gradient(180deg,  #0D0117 95%, #B378FF 5%);
+  font-size: 19px;
+  text-align: center;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  color: #ffffff !important;
+  margin-bottom: 15px;
+}
+
+.listaTarefas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.listaTitle {
+  color: #B378FF; 
+  text-align: center;
+  font-weight: 600;
+  overflow-y: hidden;
+}
+
+.tarefa {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: linear-gradient(90deg,  #d478ff 5% ,#B378FF   95%) ;
+  border-left: 2px solid #0d011767;
+  padding:  5px;
+}
+
+.tarefa:hover {
+  background: linear-gradient(90deg, #B378FF  5% , #d478ff  95%) ;
+  cursor: pointer;
+}
+
+.tituloDescricao {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.titulo {
+  color: #0D0117;
+  font-size: 19px;
+}
+
+.concluirTarefa {
+  color: #ffffff; 
+  text-shadow: 2px 2px 2px #0D0117;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.concluirTarefa:hover {
+  color: #21ff97; 
+  cursor: pointer;
+}
+.btnAdicionarTarefa {
+  background-color: #0D0117; 
+  color: #ffffff;
+  padding: 12px 18px;
+  font-size: 17px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btnAdicionarTarefa:hover {
+  background: linear-gradient(180deg,  #0D0117 90%, #B378FF 10%);
+  outline: 1px;
+}
+
+.descricao p {
+  text-shadow: 2px 2px 2px #f4e6ff3d;
+
+  font-size: 16px;
+}
+
+.label_form {
+  font-size: 18px;
+  color: #0D0117;
+}
+.input_form {
+  border: 2px solid #B378FF;
+  border-radius: 5px;
+  width: calc(100% - 2px);
+  padding: 2px;
+  min-height: 30px;
+}
+
+.input_form:focus {
+  background: linear-gradient(180deg,  #ffffff 95%, #B378FF 5%);
+  box-shadow: none !important;
+  outline: none;
+}
+
+.text_form {
+  border: 2px solid #B378FF;
+  border-radius: 5px;
+  padding: 2px;
+  min-width: calc(100% - 2px);
+  min-height: 80px; 
+  resize: none;
+}
+
+.text_form:focus {
+  background: linear-gradient(180deg,  #ffffff 95%, #B378FF 5%);
+  box-shadow: none !important;
+  outline: none;
+}
+
+.text_form:hover {
+  box-shadow: 0 0 5px rgba(179, 120, 255, 0.5);
+}
+
+.text_form:active {
+  box-shadow: 0 0 8px rgba(179, 120, 255, 0.8);
+}
+
+.form_tarefa {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+

@@ -1,38 +1,77 @@
 
 .estilo_card {
-    border-radius: 20px !important; 
+    border-radius: 2px !important; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 16px; 
-    border: 1px solid #B378FF;
-    border-bottom: 7px solid   #B378FF;
+    margin-bottom: 50px; 
+    width: 100%;
+    border: 1px solid #0D0117;
+    border-bottom: 5px solid   #B378FF;
   }
   
   .conteudo_card {
     display: flex;
     flex-direction: column;
     gap:10px;
-    padding: 16px;
+    justify-content: center;
+    align-items: flex-end;
+
+
+
   }
   
   .cardHeader {
     display: flex;
+    height: 55px;
+    padding: 0 10px;
     gap: 15px;
     align-items: center;
+    color: #B378FF;
+    text-shadow: 2px 2px 2px #0d011750;
+  }
+  .texto_header {
+    font-size: 18px !important;
   }
 
   .estilo_botao {
-    background: linear-gradient(90deg,  #0D0117 95%, #B378FF 5%);
+    background: linear-gradient(180deg, #B378FF 95%, #0d01177e 5%);
     color: white !important;
-    width: 120px;
+    width: 90px;
+    height: 30px;
   }
+
+
 
   .estilo_caixaconteudo {
     border: none !important;
     outline: none !important;
-    border-radius: 0 !important; /* ou remova esta linha se não quiser bordas arredondadas */
+    border-radius: 0 !important; 
     box-shadow: none !important;
+    color: #0D0117  !important;
+
   }
   
   .noBorder {
     border: 1px solid #B378FF !important;
+  }
+
+  .div_emojis {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .container_emojis {
+    display: flex;
+    gap:4px;
+    font-size: 19px;
+  }
+
+  .emoji_botao {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+
   }

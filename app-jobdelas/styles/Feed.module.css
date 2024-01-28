@@ -1,3 +1,16 @@
-.postBoxContainer {
-    width: 70%;
+.container_page {
+    margin: 30px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.lateral {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feed {
+    width: 60%;
 }

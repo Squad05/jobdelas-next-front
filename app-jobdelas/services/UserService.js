@@ -1,11 +1,17 @@
 import axios from "axios";
 
 class UserService {
-  async detalhesUsuaria(token) {
+  async detalhesUsuaria() {
     try {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        throw new Error("Token não encontrado no localStorage.");
+      }
       const headers = {
         Authorization: `Bearer ${token}`,
       };
+
       const response = await axios.get(
         "https://jobdelas-khy0.onrender.com/auth/detalhes",
         { headers }

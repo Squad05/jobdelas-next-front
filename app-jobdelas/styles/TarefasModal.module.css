@@ -1,0 +1,41 @@
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Largura ajustável conforme necessário */
+    max-width: 600px; /* Largura máxima */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .inputTarefa {
+    margin-bottom: 16px;
+  }
+  
+  .botaoAdicionar {
+    margin-bottom: 16px;
+  }
+  
+  .listaTarefas {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .itemTarefa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .iconeConcluir {
+    margin-left: 8px;
+  }
+  
+  .botaoFechar {
+    margin-top: 16px;
+  }
+  
