@@ -1,4 +1,4 @@
-# ![logojbcompany](https://github.com/Squad05/jbcompany-next-front/assets/129866444/42957ecc-61cf-46e0-8b4f-f6dddfb97d07)
+![logo](https://github.com/Squad05/jobdelas-next-front/assets/129866444/5394afda-461d-4a20-9ecf-7a670378d444)
 
 > Status: Concluído
 
