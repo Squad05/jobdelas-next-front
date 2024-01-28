@@ -13,19 +13,28 @@
     color: #fff;
 }
 
-.assistir {
-    background-color: #0D0117;
+.lista_aula  .botao_assistir {
+    background-color: #0D0117 !important;
     color: #fff;
 }
+
+.lista_aula  .botao_assistir:hover {
+    background: linear-gradient(180deg, #0D0117 95%, white 5%);
+}
+
+
 
 .descricao {
     background-color: #0D0117;
     color: #fff;
 }
 
-.aula {
+.modal_estilo {
+    background-color: #d478ff3b ;
+}
+
+.caixa_aula {
     background-color: #0D0117;
-    color: #fff;
-    display: block;
-    padding-bottom: 7px;
+    border-right: 10px solid #B378FF;
+    color: white;
 }

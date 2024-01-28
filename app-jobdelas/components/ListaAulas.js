@@ -57,9 +57,12 @@ const ListaAulas = () => {
       <ul>
         {aulas.map((aula, index) => (
           <li key={index}>
-            <Box  className={styles.lista_aula} >
+            <Box className={styles.lista_aula}>
               <Typography className={styles.titulo}>{aula.titulo}</Typography>
-              <Button className={styles.assistir} onClick={() => handleAulaClick(aula.titulo)}>
+              <Button
+                className={styles.botao_assistir}
+                onClick={() => handleAulaClick(aula.titulo)}
+              >
                 <PlayArrow /> Assistir
               </Button>
             </Box>
@@ -67,32 +70,35 @@ const ListaAulas = () => {
         ))}
       </ul>
 
-      <Modal open={modalAberto} onClose={fecharModal}>
+      <Modal
+        className={styles.modal_estilo}
+        open={modalAberto}
+        onClose={fecharModal}
+      >
         <Box
+          className={styles.caixa_aula}
           sx={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             width: 600,
-            bgcolor: "background.paper",
             boxShadow: 24,
             p: 4,
           }}
         >
           {aulaDetalhes && (
             <div>
-              <Typography className={styles.aula} variant="h6">{aulaSelecionada}</Typography>
-              {/* Incorporando o vídeo diretamente no modal */}
+              <Typography variant="h6">{aulaSelecionada}</Typography>
               <iframe
                 width="100%"
                 height="315"
                 src={aulaDetalhes.link}
-                title={aulaDetalhes.titulo}
-                frameBorder="0"
                 allowFullScreen
               ></iframe>
-              <p className={styles.descricao}>Descrição: {aulaDetalhes.descricao}</p>
+              <p className={styles.descricao}>
+                Descrição: {aulaDetalhes.descricao}
+              </p>
             </div>
           )}
         </Box>

@@ -25,10 +25,6 @@ class UserService {
 
       const userDetails = { ...response.data, candidaturas: candidaturas.data };
 
-      console.log(candidaturas);
-
-      console.log(userDetails);
-
       return userDetails;
     } catch (error) {
       console.error("Erro ao buscar detalhes do Usuário", error);
