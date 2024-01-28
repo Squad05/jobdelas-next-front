@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Typography, Button, Divider } from "@mui/material";
 import styles from "../styles/SidePerfil.module.css";
 import { CheckCircle, Lightbulb, Message } from "@mui/icons-material";
