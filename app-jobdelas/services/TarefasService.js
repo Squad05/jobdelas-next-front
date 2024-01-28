@@ -52,6 +52,26 @@ class TarefasService {
       throw error;
     }
   }
+
+  async deletarTarefa(id) {
+    try {
+      const token = localStorage.getItem("token");
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      const response = await axios.delete(
+        `https://jobdelas-khy0.onrender.com/tarefas/deletar/${id}`,
+        { headers }
+      );
+
+      console.log("Tarefa deletada com sucesso");
+
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao deletar tarefa:", error);
+      throw error;
+    }
+  }
 }
 
 export default new TarefasService();

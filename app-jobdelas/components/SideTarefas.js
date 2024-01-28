@@ -38,8 +38,18 @@ const SideTarefas = () => {
     carregarTarefas();
   }, []);
 
-  const handleConcluirTarefa = (tarefaId) => {
-    console.log(`Concluir Tarefa ${tarefaId}`);
+  const handleConcluirTarefa = async (tarefaId) => {
+    try {
+      await TarefasService.deletarTarefa(tarefaId);
+      console.log(`Tarefa ${tarefaId} deletada com sucesso`);
+
+      const tarefasAtualizadas = tarefas.filter(
+        (tarefa) => tarefa.id !== tarefaId
+      );
+      setTarefas(tarefasAtualizadas);
+    } catch (error) {
+      console.error(`Erro ao deletar tarefa ${tarefaId}:`, error);
+    }
   };
 
   const handleToggleDescricao = (tarefaId) => {
