@@ -1,7 +1,9 @@
 import { useAuth } from "@/hooks/useAuth";
 import NavbarSocial from "@/components/NavbarSocial";
 import Head from "next/head";
-import AulasContainer from "@/components/CardAulas";
+import styles from "../../../styles/Vagas.module.css";
+
+import CursoInfo from "@/components/CursoInfo";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 
 export default function Aulas() {
@@ -15,9 +17,11 @@ export default function Aulas() {
       <Head>
         <title> Job Delas </title>
       </Head>
-      <NavbarSocial />
-      <main>
-        <AulasContainer />
+      <main className={styles.container_principal}>
+        <NavbarSocial />
+        <div className={styles.container_conteudo}>
+          <CursoInfo />
+        </div>
       </main>
     </AuthenticatedRoute>
   );
