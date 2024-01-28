@@ -29,6 +29,16 @@ export const SidePerfil = () => {
     fetchUsuario();
   }, []);
 
+  const handleFileChange = async (event) => {
+    try {
+      const file = event.target.files[0];
+
+      await UserService.editarFotoUsuaria(file);
+    } catch (error) {
+      console.error("Erro ao editar a foto do usuário", error);
+    }
+  };
+
   return (
     <div className={styles.side_container}>
       <Box display="flex" flexDirection="column" alignItems="center">
@@ -42,6 +52,13 @@ export const SidePerfil = () => {
           src={fotoUsuario}
           alt="Foto de Perfil"
           className={styles.foto_perfil}
+        />
+
+        <Input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          className={styles.fileInput}
         />
 
         <div className={styles.info_container}>
@@ -59,11 +76,9 @@ export const SidePerfil = () => {
             </Typography>
           </div>
           <Divider className={styles.customDivider} />
-
           <div className={styles.info_item}>
             <Message className={styles.info_icon} />
             <Typography mt={1}>
-              {" "}
               {values.postagensFeitas} conversas iniciadas
             </Typography>
           </div>
