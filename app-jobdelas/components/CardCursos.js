@@ -9,11 +9,15 @@ import styles from "../styles/CardCurso.module.css";
 import Link from "next/link";
 import CursoService from "@/services/CursoService";
 import BookIcon from "@mui/icons-material/Book";
+import UserService from "@/services/UserService";
+import { useRouter } from "next/router";
+import CandidaturaService from "@/services/CandidaturaService";
 
 const ListaCursos = () => {
   const [cursos, setCursos] = useState([]);
   const [cursosFiltrados, setCursosFiltrados] = useState([]);
   const [numColunas, setNumColunas] = useState(2);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchCursos = async () => {
@@ -37,6 +41,23 @@ const ListaCursos = () => {
         (curso) => curso.categoria === categoria
       );
       setCursosFiltrados(cursosFiltrados);
+    }
+  };
+
+  const handleAssistir = async (curso) => {
+    try {
+      const detalhesUsuaria = await UserService.detalhesUsuaria();
+
+      await CandidaturaService.cadastrarCandidaturaCurso({
+        candidataEmail: detalhesUsuaria.email,
+        candidataNome: detalhesUsuaria.nome,
+        cursos: curso,
+      });
+      console.log(detalhesUsuaria);
+
+      router.push(`/social/aulas?id=${curso.id}`);
+    } catch (error) {
+      console.error("Erro ao assistir curso:", error);
     }
   };
 
@@ -83,21 +104,15 @@ const ListaCursos = () => {
                     Categoria: {curso.categoria}
                   </Typography>
                   <Box className={styles.container_botao}>
-                    <Link
-                      href={{
-                        pathname: "/social/aulas",
-                        query: { id: curso.id },
-                      }}
+                    <Button
+                      className={styles.botao_card}
+                      sx={{ marginTop: 2 }}
+                      onClick={() => handleAssistir(curso)}
                     >
-                      <Button
-                        className={styles.botao_card}
-                        sx={{ marginTop: 2 }}
-                      >
-                        {" "}
-                        <BookIcon />
-                        Assistir
-                      </Button>
-                    </Link>
+                      {" "}
+                      <BookIcon />
+                      Assistir
+                    </Button>
                   </Box>
                 </CardContent>
               </Card>

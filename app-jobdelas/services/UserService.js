@@ -19,11 +19,21 @@ class UserService {
 
       const email = response.data.email;
 
-      const candidaturas = await axios.get(
+      console.log("O email é " + email);
+      console.log(response);
+
+      const candidaturasVagas = await axios.get(
         `https://jbcompanyapi.onrender.com/candidaturas/contar/${email}`
       );
+      const candidaturasCursos = await axios.get(
+        `https://jbcompanyapi.onrender.com/candidaturas-cursos/contar/${email}`
+      );
 
-      const userDetails = { ...response.data, candidaturas: candidaturas.data };
+      const userDetails = {
+        ...response.data,
+        quantidadeVagas: candidaturasVagas.data,
+        quantidadeCurso: candidaturasCursos.data,
+      };
 
       return userDetails;
     } catch (error) {

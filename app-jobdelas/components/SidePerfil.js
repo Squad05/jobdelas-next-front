@@ -9,8 +9,8 @@ export const SidePerfil = () => {
     primeiroNome: "",
     vagasAplicadas: "",
     foto: "",
-    oportunidades: 10,
-    postagensFeitas: 10,
+    oportunidades: "",
+    postagensFeitas: "",
   });
 
   const handleFileChange = async (event) => {
@@ -30,8 +30,8 @@ export const SidePerfil = () => {
       setValues({
         ...values,
         nome: detalhesUsuario.nome,
-        vagasAplicadas: detalhesUsuario.candidaturas,
-        oportunidades: "detalhesUsuario.oportunidades",
+        vagasAplicadas: detalhesUsuario.quantidadeVagas,
+        oportunidades: detalhesUsuario.quantidadeCursos,
         postagensFeitas: "detalhesUsuario.postagensFeitas",
         foto: detalhesUsuario.foto,
       });
