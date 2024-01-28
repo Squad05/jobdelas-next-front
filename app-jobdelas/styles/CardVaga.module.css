@@ -103,3 +103,32 @@
        display: flex;
     }
 }
+
+.estilo_modal {
+    background-color: #b378ff1e;
+    
+}
+.estilo_box {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,  #0D0117 98%, #B378FF 2%);
+
+}
+
+.titulo_modal {
+    color: #B378FF;
+}
+.texto_modal {
+    color: white;
+}
+
+.botao_modal {
+    color: white !important ;
+    background-color: #B378FF !important;
+    width: 70px;
+    padding: 5px 10px !important;
+}
