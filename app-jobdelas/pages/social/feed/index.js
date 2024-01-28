@@ -8,6 +8,7 @@ import ListaPostagemCard from "@/components/ListaPostagemCard";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 import { SidePerfil } from "@/components/SidePerfil";
 import SidePostagem from "@/components/SidePostagem";
+import SideTarefas from "@/components/SideTarefas";
 
 export default function Perfil() {
   return (
@@ -20,7 +21,7 @@ export default function Perfil() {
           <NavbarSocial />
           <div className={styles.container_page}>
             <div className={styles.lateral}>
-              <SidePerfil />
+              <SideTarefas />
             </div>
             <div className={styles.feed}>
               <CriarPostagemCard />
