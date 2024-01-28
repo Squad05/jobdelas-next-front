@@ -7,9 +7,3 @@
     width: auto;
     height: 160px;
 }
-
-@media (max-width: 920px) {
-    .foto {
-        display: none; 
-    }
-}
