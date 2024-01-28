@@ -41,7 +41,7 @@ const SidePostagem = () => {
             alt={`Foto de ${nomeUsuario}`}
           />
         </div>
-        <Typography>{status}</Typography>
+        <Typography className={styles.status}>{status}</Typography>
       </Box>
     </div>
   );
