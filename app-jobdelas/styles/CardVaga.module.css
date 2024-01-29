@@ -1,9 +1,7 @@
-
-
 .estilo_card {
     border-radius: 0px;
     padding: 0 !important;
-    border: 1px solid #0d01170a ;
+    border: 1px solid #0d01170a;
 }
 
 .card_body {
@@ -12,7 +10,7 @@
 
 .card_body .titulo {
     color: white;
-    background: linear-gradient(90deg,  #0D0117 95%, #B378FF 5%);
+    background: linear-gradient(90deg, #0D0117 95%, #B378FF 5%);
     text-align: center;
     display: flex;
     align-items: center;
@@ -32,9 +30,8 @@
     width: 100px;
     height: 35px;
     margin: 10px !important;
-    gap:5px;
-
-
+    gap: 5px;
+    transition: all 0.3s ease; 
 }
 
 .filtro {
@@ -54,7 +51,12 @@
     align-items: center;
     height: 40px;
     text-align: center;
+}
 
+.botaoFiltro {
+    color: white !important;
+    text-shadow: 2px 2px 2px #0d011754;
+    transition: all 0.3s ease; 
 }
 
 .container_vagas {
@@ -62,12 +64,6 @@
     justify-content: flex-start;
     margin-top: 25px !important;
     padding: 0 !important;
-
-}
-
-.botaoFiltro {
-    color: white !important;
-    text-shadow: 2px 2px 2px #0d011754;
 }
 
 .container_botao {
@@ -75,61 +71,52 @@
     justify-content: flex-end;
 }
 
-
-
-
-
 .estilo_modal {
     background-color: #b378ff1e;
-    
 }
+
 .estilo_box {
     padding: 25px;
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg,  #0D0117 98%, #B378FF 2%);
-
+    background: linear-gradient(90deg, #0D0117 98%, #B378FF 2%);
 }
 
 .titulo_modal {
     color: #B378FF;
 }
+
 .texto_modal {
     color: white;
 }
 
 .botao_modal {
-    color: white !important ;
+    color: white !important;
     background-color: #B378FF !important;
     width: 70px;
     padding: 5px 10px !important;
 }
 
+.botao_aumentado {
+    font-size: 11px;
+    transition: all 0.3s ease; 
+}
 
-    .botao_aumentado {
-     font-size: 11px;
+@media (max-width: 1000px) {
+    .container_principal {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
     }
-    
-    
 
-    @media (max-width: 1000px) {
-
-   .container_principal {
-    display: flex;
-    flex-direction: column !important;
-    align-items: center;
-
-   }
-
-   .container_vagas {
-   min-width: 100%;
-   padding: 25px 30px !important;
-   justify-content: center;
-   padding: 0 !important;
-
+    .container_vagas {
+        min-width: 100%;
+        padding: 25px 30px !important;
+        justify-content: center;
+        padding: 0 !important;
     }
 
     .filtro {
@@ -140,7 +127,7 @@
         width: 100%;
         gap: 30px;
         overflow: none;
-        
+        transition: all 0.3s ease; 
     }
 
     .img_filtro_visible {
@@ -150,12 +137,28 @@
     .titulo_filtro_visible {
         display: none;
     }
-    .botao_aumentado {
-        min-width: 150px !important;
-        height: 35px;
+
+    .botao_aumentado,
+    .botao_card,
+    .botaoFiltro {
+       
+        font-size: 10px;
     }
 
+    @media (max-width: 508px) {
+     
+        .filtro {
+           
+            width: 80%;
+            gap: 10px;
+        }
 
-
+        .botao_aumentado,
+        .botao_card,
+        .botaoFiltro {
+           
+            font-size: 8px;
+            width: 80px;
+        }
+    }
 }
-  
