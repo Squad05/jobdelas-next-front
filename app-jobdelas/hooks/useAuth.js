@@ -21,7 +21,7 @@ const useAuth = () => {
     verificarAutenticacao();
   }, []);
 
-  return { autenticado, verificarAutenticacao }; // Corrigi o nome da função aqui
+  return { autenticado, verificarAutenticacao }; 
 };
 
 export { useAuth };

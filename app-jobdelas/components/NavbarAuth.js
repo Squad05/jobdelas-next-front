@@ -22,8 +22,8 @@ export default function NavbarAuth({ linkRota, nomeRota }) {
           <Logo />
         </Box>
 
-        <Link href="/" className={styles.estilo_link} passHref>
-          Home
+        <Link href="/auth/logar" className={styles.estilo_link} passHref>
+          Login
           <HomeIcon className={styles.estilo_icon} />
         </Link>
 

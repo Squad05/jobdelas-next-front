@@ -3,7 +3,6 @@
     padding: 8px 40px;
 }
 
-
 .userNavbar {
     background-color: #0D0117;
     display: flex;
@@ -13,16 +12,14 @@
 .userInfo {
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 
 .userName {
     color: white;
 }
 
-
 .navBarInferior {
-    background: linear-gradient(180deg, #B378FF  2% , #d478ff  98%) ;
+    background: linear-gradient(180deg, #B378FF 2%, #d478ff 98%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +41,6 @@
     flex-direction: column;
     align-items: center;
 }
-
 
 .searchBar {
     display: flex;
@@ -69,17 +65,19 @@
     text-shadow: 2px 2px 4px #0d01170e;
 }
 
-
-@media (max-width: 650px) {
-
+@media (max-width: 700px) {
     .searchBar,
     .searchBar .searchIcon {
         display: none;
     }
 
-
-
     .navSocialLinks {
         gap: 10px;
+    }
+}
+
+@media (max-width: 395px) {
+    .userName {
+        display: none;
     }
 }
