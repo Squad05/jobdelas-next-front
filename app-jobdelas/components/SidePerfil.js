@@ -49,16 +49,17 @@ export const SidePerfil = () => {
   return (
     <div className={styles.side_container}>
       <Box display="flex" flexDirection="column" alignItems="center">
-        <div className={styles.header_box}>
-          <Typography className={styles.titulo_header}>
-            {`${values.nome}`}
-          </Typography>
-        </div>
         <img
           src={values.foto}
           alt="Foto de Perfil"
           className={styles.foto_perfil}
         />
+
+        <div className={styles.header_box}>
+          <Typography className={styles.titulo_header}>
+            {`${values.nome}`}
+          </Typography>
+        </div>
 
         <Input
           type="file"

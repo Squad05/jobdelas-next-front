@@ -65,6 +65,13 @@
     text-shadow: 2px 2px 4px #0d01170e;
 }
 
+
+.userPhoto {
+    width: 50px !important;
+    height: 50px;
+    margin-left: 10px;
+}
+
 @media (max-width: 700px) {
     .searchBar,
     .searchBar .searchIcon {

@@ -20,7 +20,6 @@
 .foto_perfil {
     width: 130px;
     height: 125px; 
-    box-shadow: 2px 2px 4px #0d01173d;
     border-radius: 50%;
     border: 1px solid #e3c2ff;
 }
@@ -45,7 +44,6 @@
     font-size: 25px;
     color: #B378FF;
   }
-  
 
   
 
@@ -57,8 +55,7 @@
   }
 
   .botao_perfil {
-    background: linear-gradient(180deg, #B378FF   85%, #0D0117 90%); /* Cores sólidas sem gradiente */
-
+    background: linear-gradient(180deg, #B378FF   85%, #0D0117 90%); 
     color: #fff;
     padding: 4px 15px;
     font-weight: 600;
@@ -66,7 +63,7 @@
   }
   
   .botao_perfil:hover {
-    background: linear-gradient(180deg, #0D0117 85%, #B378FF 90%); /* Cores sólidas sem gradiente */
+    background: linear-gradient(180deg, #0D0117 85%, #B378FF 90%); 
   }
 
   .customDivider {
