@@ -1,4 +1,3 @@
-/* Chat.module.css */
 
 .chat-container {
     position: fixed;
@@ -25,9 +24,22 @@
   }
   
   .message {
-    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+  
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap:  4px;
   }
   
+  .userInfo {
+    display: flex;
+    align-items: center;
+    gap:  5px;
+    color: #B378FF;
+    font-size: 17px;
+  }
+
   .chat-input {
     display: flex;
     flex-direction: column;
@@ -65,4 +77,11 @@
     gap: 3px;
     color: #B378FF !important;
     align-self: flex-end;
+  }
+
+  .userPhoto {
+    width: 30px;
+    height: 30px;
+    border-radius: 60%;
+    border: 1px solid #b378ff31;
   }
