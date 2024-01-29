@@ -6,7 +6,7 @@ import UserService from "@/services/UserService";
 
 export const SidePerfil = () => {
   const [values, setValues] = useState({
-    primeiroNome: "",
+    nome: "",
     vagasAplicadas: "",
     foto: "",
     oportunidades: "",
@@ -16,7 +16,6 @@ export const SidePerfil = () => {
   const handleFileChange = async (event) => {
     try {
       const file = event.target.files[0];
-
       await UserService.editarFotoUsuaria(file);
     } catch (error) {
       console.error("Erro ao editar a foto do usuário", error);
@@ -26,14 +25,13 @@ export const SidePerfil = () => {
   const atualizarValores = async () => {
     try {
       const detalhesUsuario = await UserService.detalhesUsuaria();
-      console.log(detalhesUsuario);
+
       setValues({
-        ...values,
-        nome: detalhesUsuario.nome,
-        vagasAplicadas: detalhesUsuario.quantidadeVagas,
-        oportunidades: detalhesUsuario.quantidadeCurso,
-        postagensFeitas: detalhesUsuario.quantidadePostagens,
-        foto: detalhesUsuario.foto,
+        nome: detalhesUsuario.nome || "", // Certifique-se de definir um valor padrão se estiver indefinido
+        vagasAplicadas: detalhesUsuario.quantidadeVagas || "",
+        oportunidades: detalhesUsuario.quantidadeCurso || "",
+        postagensFeitas: detalhesUsuario.quantidadePostagens || "",
+        foto: detalhesUsuario.foto || "",
       });
     } catch (error) {
       console.error("Erro ao obter detalhes do usuário", error);
@@ -43,6 +41,10 @@ export const SidePerfil = () => {
   useEffect(() => {
     atualizarValores();
   }, []);
+
+  if (!values.nome) {
+    return null;
+  }
 
   return (
     <div className={styles.side_container}>
