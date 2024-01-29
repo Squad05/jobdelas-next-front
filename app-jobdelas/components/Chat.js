@@ -30,7 +30,7 @@ const Chat = () => {
     if (message.trim() !== "") {
       ChatService.enviarMensagem(message)
         .then((response) => {
-          setChatMessages([...chatMessages, response.mensagem]);
+          setChatMessages((prevMessages) => [...prevMessages, response]);
           setMessage("");
         })
         .catch((error) => console.error("Erro ao enviar mensagem:", error));
