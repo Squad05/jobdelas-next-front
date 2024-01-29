@@ -5,6 +5,8 @@
 
 .userNavbar {
     background-color: #0D0117;
+    height: 90px;
+    align-items: center;
     display: flex;
     justify-content: space-between;
 }
@@ -67,8 +69,8 @@
 
 
 .userPhoto {
-    width: 50px !important;
-    height: 50px !important;
+    width: 55px !important;
+    height: 55px !important;
     margin-left: 10px;
 }
 
