@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
-import ChatIcon from "@mui/icons-material/Chat";
 import BookIcon from "@mui/icons-material/Book";
 import WorkIcon from "@mui/icons-material/Work";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
@@ -59,9 +58,6 @@ const NavbarSocial = () => {
           <Link href="/social/feed" className={styles.estilo_link}>
             <HomeWork className={styles.icon} />
             <Typography>Inicio</Typography>
-          </Link>
-          <Link href="/social/chat" className={styles.estilo_link}>
-            <ChatIcon className={styles.icon} /> <Typography>Chat</Typography>
           </Link>
           <Link href="/social/cursos" className={styles.estilo_link}>
             <BookIcon className={styles.icon} /> <Typography>Cursos</Typography>
