@@ -23,7 +23,9 @@ const FiltroVagas = ({ categorias, onFiltrar }) => {
         <Button
           key={index}
           onClick={() => onFiltrar(categoria)}
-          className={`${styles.botaoFiltro} ${styles[getCorStatus(categoria)]} ${styles.botao_aumentado}`}
+          className={`${styles.botaoFiltro} ${
+            styles[getCorStatus(categoria)]
+          } ${styles.botao_aumentado}`}
           style={{
             backgroundColor:
               getCorStatus(categoria) === "aberta"

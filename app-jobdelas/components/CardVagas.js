@@ -75,7 +75,7 @@ const ListaVagas = () => {
   };
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} className={styles.container_principal}>
       <Grid item xs={12} sm={3} className={styles.estilo_item_filtro}>
         <FiltroVagas
           categorias={["Todos", "Aberta", "Fechada"]}
