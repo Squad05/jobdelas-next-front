@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import ChatIcon from "@mui/icons-material/Chat";
@@ -9,11 +9,15 @@ const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [chatMessages, setChatMessages] = useState([]);
+  const messagesContainerRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
       ChatService.getChatMessages()
-        .then((messages) => setChatMessages(messages))
+        .then((messages) => {
+          setChatMessages(messages);
+          scrollToBottom();
+        })
         .catch((error) => console.error("Erro ao carregar mensagens:", error));
     }
   }, [isOpen]);
@@ -32,16 +36,21 @@ const Chat = () => {
         .then((response) => {
           setChatMessages((prevMessages) => [...prevMessages, response]);
           setMessage("");
+          scrollToBottom();
         })
         .catch((error) => console.error("Erro ao enviar mensagem:", error));
     }
+  };
+
+  const scrollToBottom = () => {
+    messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
   };
 
   return (
     <div className={styles["chat-container"]}>
       {isOpen && (
         <>
-          <div className={styles["chat-messages"]}>
+          <div ref={messagesContainerRef} className={styles["chat-messages"]}>
             {chatMessages.map((chat, index) => (
               <div key={index} className={styles.message}>
                 <div className={styles.userInfo}>
