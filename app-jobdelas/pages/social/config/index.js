@@ -5,6 +5,7 @@ import styles from "../../../styles/Perfil.module.css";
 import NavbarSocial from "@/components/NavbarSocial";
 import { useAuth } from "@/hooks/useAuth";
 import AuthenticatedRoute from "../../../components/AuthenticatedRoute";
+import Chat from "@/components/Chat";
 
 export default function Config() {
   const { autenticado } = useAuth();
@@ -21,6 +22,7 @@ export default function Config() {
         </Head>
         <main className={styles.main_principal}>
           <NavbarSocial />
+          <Chat />
           <div className={styles.container_conteudo}>
             <SidePerfil />
             <ConfiguracaoUser />

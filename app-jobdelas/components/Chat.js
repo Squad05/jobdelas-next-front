@@ -60,7 +60,7 @@ const Chat = () => {
           </div>
 
           <div className={styles["chat-input"]}>
-            <TextField
+            <textarea
               type="text"
               className={styles.caixa_msg}
               placeholder="Digite sua mensagem"

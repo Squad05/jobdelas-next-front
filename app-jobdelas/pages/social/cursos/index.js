@@ -5,6 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import ListaCursos from "@/components/CardCursos";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 import InicioPageVagas from "@/components/InicioPageVagas";
+import Chat from "@/components/Chat";
 
 export default function Cursos() {
   const { autenticado } = useAuth();
@@ -21,6 +22,7 @@ export default function Cursos() {
         </Head>
         <main className={styles.container_principal}>
           <NavbarSocial />
+          <Chat />
           <div className={styles.container_conteudo}>
             <InicioPageVagas />
             <ListaCursos />

@@ -5,6 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import ListaVagas from "@/components/CardVagas";
 import InicioPageVagas from "@/components/InicioPageVagas";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
+import Chat from "@/components/Chat";
 
 export default function Vagas() {
   const { autenticado } = useAuth();
@@ -21,6 +22,7 @@ export default function Vagas() {
         </Head>
         <main className={styles.container_principal}>
           <NavbarSocial />
+          <Chat />
           <div className={styles.container_conteudo}>
             <InicioPageVagas />
             <ListaVagas />

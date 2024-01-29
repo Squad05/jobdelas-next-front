@@ -6,6 +6,7 @@ import styles from "../../../styles/Vagas.module.css";
 import CursoInfo from "@/components/CursoInfo";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 import ListaAulas from "@/components/ListaAulas";
+import Chat from "@/components/Chat";
 
 export default function Aulas() {
   const { autenticado } = useAuth();
@@ -20,6 +21,7 @@ export default function Aulas() {
       </Head>
       <main className={styles.container_principal}>
         <NavbarSocial />
+        <Chat />
         <div className={styles.container_conteudo}>
           <CursoInfo />
           <ListaAulas />

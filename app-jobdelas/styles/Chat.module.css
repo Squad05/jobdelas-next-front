@@ -85,3 +85,8 @@
     border-radius: 60%;
     border: 1px solid #b378ff31;
   }
+
+  .caixa_msg {
+    outline: none;
+    height: 70px;
+  }
