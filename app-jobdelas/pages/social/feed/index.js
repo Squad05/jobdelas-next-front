@@ -9,6 +9,7 @@ import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 import { SidePerfil } from "@/components/SidePerfil";
 import SidePostagem from "@/components/SidePostagem";
 import SideTarefas from "@/components/SideTarefas";
+import Chat from "@/components/Chat";
 
 export default function Perfil() {
   return (
@@ -19,6 +20,7 @@ export default function Perfil() {
         </Head>
         <main className={styles.mainprincipal}>
           <NavbarSocial />
+          <Chat />
           <div className={styles.container_page}>
             <div className={styles.lateral}>
               <SideTarefas />
