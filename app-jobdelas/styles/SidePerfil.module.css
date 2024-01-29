@@ -18,9 +18,10 @@
 }
 
 .foto_perfil {
-    width: 130px;
+    width: 125px;
     height: 125px; 
     border-radius: 50%;
+    object-fit: cover !important;
     border: 1px solid #e3c2ff;
 }
   

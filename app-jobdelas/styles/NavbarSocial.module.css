@@ -72,6 +72,7 @@
     width: 55px !important;
     height: 55px !important;
     margin-left: 10px;
+    object-fit: cover !important;
 }
 
 @media (max-width: 700px) {
