@@ -3,7 +3,6 @@ import styles from "../../styles/Auth.module.css";
 import CadastroForm from "@/components/FormCadastro";
 import NavbarAuth from "@/components/NavbarAuth";
 import InfoSecaoAuth from "@/components/InfoSecaoAuth";
-import Loading from "@/components/Loading";
 
 export default function Cadastro() {
   return (

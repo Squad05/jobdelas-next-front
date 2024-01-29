@@ -1,17 +1,22 @@
 import Head from "next/head";
 import styles from "../../../styles/Feed.module.css";
 import { useAuth } from "@/hooks/useAuth";
-import { Box } from "@mui/material";
 import NavbarSocial from "@/components/NavbarSocial";
 import CriarPostagemCard from "@/components/CriarPostagemCard";
 import ListaPostagemCard from "@/components/ListaPostagemCard";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
-import { SidePerfil } from "@/components/SidePerfil";
 import SidePostagem from "@/components/SidePostagem";
 import SideTarefas from "@/components/SideTarefas";
 import Chat from "@/components/Chat";
 
 export default function Perfil() {
+
+  const { autenticado } = useAuth();
+
+  if (!autenticado) {
+    return null;
+  }
+
   return (
     <AuthenticatedRoute>
       <>
@@ -22,14 +27,14 @@ export default function Perfil() {
           <NavbarSocial />
           <Chat />
           <div className={styles.container_page}>
-            <div className={styles.lateral}>
+            <div className={styles.lateral_esquerda}>
               <SideTarefas />
             </div>
             <div className={styles.feed}>
               <CriarPostagemCard />
               <ListaPostagemCard />
             </div>
-            <div className={styles.lateral}>
+            <div className={styles.lateral_direita}>
               <SidePostagem />
             </div>
           </div>

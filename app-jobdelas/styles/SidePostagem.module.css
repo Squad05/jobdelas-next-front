@@ -1,10 +1,7 @@
-
-
 .caixa_status {
-    background-color:#0D0117;
+    background-color: #0D0117;
     border-radius: 3px;
     border-bottom: 10px solid #B378FF;
-
 }
 
 .nome_status {
@@ -22,8 +19,9 @@
 .iconstatus {
     color: #fff;
 }
-@media (max-width: 920px) {
-    .status {
-        display: none; 
+
+@media (max-width: 1104px) {
+    .caixa_status {
+        display: none !important;
     }
 }
