@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { Favorite as FavoriteIcon } from "@mui/icons-material";
 import PostagensService from "@/services/PostagensService";
-import styles from "../styles/ListaPostagemCard.module.css";
+import styles from "../../styles/ListaPostagemCard.module.css";
 
 const ListaPostagemCard = () => {
   const [postagens, setPostagens] = useState([]);

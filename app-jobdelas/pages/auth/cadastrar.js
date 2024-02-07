@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../../styles/Auth.module.css";
-import CadastroForm from "@/components/FormCadastro";
-import NavbarAuth from "@/components/NavbarAuth";
+import CadastroForm from "@/components/forms/FormCadastro";
+import NavbarAuth from "@/components/navbar/NavbarAuth";
 import InfoSecaoAuth from "@/components/InfoSecaoAuth";
 
 export default function Cadastro() {

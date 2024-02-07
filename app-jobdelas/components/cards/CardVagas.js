@@ -3,12 +3,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Box, Grid, Modal, Paper } from "@mui/material";
-import FiltroVagas from "./FiltroVagas";
-import styles from "../styles/CardVaga.module.css";
+import { Box, Grid, Modal } from "@mui/material";
+import FiltroVagas from "../FiltroVagas";
+import styles from "../../styles/CardVaga.module.css";
 import WorkIcon from "@mui/icons-material/Work";
-import VagaService from "../services/VagaService";
-import CandidaturaService from "../services/CandidaturaService";
+import VagaService from "../../services/VagaService";
+import CandidaturaService from "../../services/CandidaturaService";
 import UserService from "@/services/UserService";
 
 const ListaVagas = () => {

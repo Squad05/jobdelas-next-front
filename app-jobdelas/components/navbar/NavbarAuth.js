@@ -6,8 +6,8 @@ import Box from "@mui/material/Box";
 
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import HomeIcon from "@mui/icons-material/Home";
-import styles from "../styles/NavbarAuth.module.css";
-import Logo from "./Logo";
+import styles from "../../styles/NavbarAuth.module.css";
+import Logo from "../Logo";
 export default function NavbarAuth({ linkRota, nomeRota }) {
   return (
     <AppBar position="static" className={styles.containerNav}>

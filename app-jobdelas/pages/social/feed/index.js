@@ -1,9 +1,9 @@
 import Head from "next/head";
 import styles from "../../../styles/Feed.module.css";
 import { useAuth } from "@/hooks/useAuth";
-import NavbarSocial from "@/components/NavbarSocial";
+import NavbarSocial from "@/components/navbar/NavbarSocial";
 import CriarPostagemCard from "@/components/CriarPostagemCard";
-import ListaPostagemCard from "@/components/ListaPostagemCard";
+import ListaPostagemCard from "@/components/cards/ListaPostagemCard";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 import SidePostagem from "@/components/SidePostagem";
 import SideTarefas from "@/components/SideTarefas";

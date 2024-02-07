@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { login } from "@/services/auth/AuthService";
 
-import styles from "../styles/Login.module.css";
+import styles from "../../styles/Login.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import LockIcon from "@mui/icons-material/Lock";

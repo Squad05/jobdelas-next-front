@@ -7,10 +7,11 @@ import {
   Stack,
   InputLabel,
   Grid,
+  useMediaQuery,
 } from "@mui/material";
 import { AccountCircle, Update } from "@mui/icons-material";
 import UserService from "@/services/UserService";
-import styles from "../styles/FormPerfil.module.css";
+import styles from "../../styles/FormPerfil.module.css";
 import { useRouter } from "next/router";
 
 export const ConfiguracaoUser = () => {
@@ -25,6 +26,7 @@ export const ConfiguracaoUser = () => {
 
   const token = localStorage.getItem("token");
   const router = useRouter();
+  const isSmallScreen = useMediaQuery("(max-width:640px)");
 
   const handleChange = useCallback((event) => {
     setValues((prevState) => ({
@@ -33,6 +35,14 @@ export const ConfiguracaoUser = () => {
     }));
   }, []);
 
+  const handleFileChange = async (event) => {
+    try {
+      const file = event.target.files[0];
+      await UserService.editarFotoUsuaria(file);
+    } catch (error) {
+      console.error("Erro ao editar a foto do usuário", error);
+    }
+  };
 
   const obterDetalhesUsuaria = async () => {
     try {
@@ -62,12 +72,10 @@ export const ConfiguracaoUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
     if (!values.senha) {
       delete values.senha;
       delete values.confirmarSenha;
     } else {
-
       if (values.senha !== values.confirmarSenha) {
         console.error("As senhas não coincidem");
         return;
@@ -99,10 +107,7 @@ export const ConfiguracaoUser = () => {
           <Grid container spacing={2}>
             <Grid item xs={6}>
               <Stack spacing={2}>
-                <InputLabel
-                  className={styles.titulo_input}
-                  htmlFor="nome"
-                >
+                <InputLabel className={styles.titulo_input} htmlFor="nome">
                   Nome Completo
                 </InputLabel>
                 <input
@@ -113,10 +118,7 @@ export const ConfiguracaoUser = () => {
                   onChange={handleChange}
                 />
 
-                <InputLabel
-                  className={styles.titulo_input}
-                  htmlFor="cep"
-                >
+                <InputLabel className={styles.titulo_input} htmlFor="cep">
                   Cep
                 </InputLabel>
                 <input
@@ -127,7 +129,7 @@ export const ConfiguracaoUser = () => {
                   onChange={handleChange}
                 />
 
-
+                {/* Sempre exiba o input de senha, mesmo em telas pequenas */}
                 <InputLabel className={styles.titulo_input} htmlFor="senha">
                   Senha
                 </InputLabel>
@@ -139,6 +141,21 @@ export const ConfiguracaoUser = () => {
                   value={values.senha}
                   onChange={handleChange}
                 />
+
+                {isSmallScreen && (
+                  <>
+                    <InputLabel className={styles.titulo_input} htmlFor="file">
+                      Foto de Perfil
+                    </InputLabel>
+                    <input
+                      style={{ width: '120px' }}
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      className={styles.fileInput}
+                    />
+                  </>
+                )}
               </Stack>
             </Grid>
 
@@ -181,6 +198,7 @@ export const ConfiguracaoUser = () => {
                   value={values.confirmarSenha}
                   onChange={handleChange}
                 />
+
               </Stack>
             </Grid>
           </Grid>

@@ -27,7 +27,7 @@ export const SidePerfil = () => {
       const detalhesUsuario = await UserService.detalhesUsuaria();
 
       setValues({
-        nome: detalhesUsuario.nome || "", // Certifique-se de definir um valor padrão se estiver indefinido
+        nome: detalhesUsuario.nome || "",
         vagasAplicadas: detalhesUsuario.quantidadeVagas || "",
         oportunidades: detalhesUsuario.quantidadeCurso || "",
         postagensFeitas: detalhesUsuario.quantidadePostagens || "",

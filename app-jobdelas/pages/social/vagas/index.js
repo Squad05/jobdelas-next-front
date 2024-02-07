@@ -1,8 +1,8 @@
 import Head from "next/head";
-import NavbarSocial from "@/components/NavbarSocial";
+import NavbarSocial from "@/components/navbar/NavbarSocial";
 import styles from "../../../styles/Vagas.module.css";
 import { useAuth } from "@/hooks/useAuth";
-import ListaVagas from "@/components/CardVagas";
+import ListaVagas from "@/components/cards/CardVagas";
 import InicioPageVagas from "@/components/InicioPageVagas";
 import AuthenticatedRoute from "@/components/AuthenticatedRoute";
 import Chat from "@/components/Chat";

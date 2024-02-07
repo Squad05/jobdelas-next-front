@@ -1,5 +1,5 @@
 import { useAuth } from "@/hooks/useAuth";
-import NavbarSocial from "@/components/NavbarSocial";
+import NavbarSocial from "@/components/navbar/NavbarSocial";
 import Head from "next/head";
 import styles from "../../../styles/Vagas.module.css";
 

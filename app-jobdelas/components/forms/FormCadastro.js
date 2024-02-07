@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/Login.module.css";
+import styles from "../../styles/Login.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { cadastrar } from "@/services/auth/CadastroService";

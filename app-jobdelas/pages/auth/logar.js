@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../../styles/Auth.module.css";
-import NavbarAuth from "@/components/NavbarAuth";
-import FormLogin from "@/components/FormLogin";
+import NavbarAuth from "@/components/navbar/NavbarAuth";
+import FormLogin from "@/components/forms/FormLogin";
 import InfoSecaoAuth from "@/components/InfoSecaoAuth";
 
 export default function Logar() {
